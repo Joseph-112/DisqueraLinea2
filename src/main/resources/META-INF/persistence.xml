@@ -3,6 +3,7 @@
   <persistence-unit name="Persistencia" transaction-type="JTA">
     <jta-data-source>jdbc/Disquera</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties/>
+    <properties>
+    </properties>
   </persistence-unit>
 </persistence>

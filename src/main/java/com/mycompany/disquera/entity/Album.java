@@ -5,6 +5,7 @@
  */
 package com.mycompany.disquera.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -20,6 +21,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -32,7 +34,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Album.ListarTodos", query = "SELECT a FROM Album a")
 })
 
-public class Album {
+public class Album implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idAlbum;
@@ -41,7 +43,7 @@ public class Album {
     @JoinColumn(name = "id_artista", nullable = false)
     private Artista artista;
     
-    @OneToMany(mappedBy = "artista", fetch = FetchType.LAZY, cascade= CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "album", fetch = FetchType.LAZY, cascade= CascadeType.ALL, orphanRemoval = true)
     private List<Cancion> cancion;
     
     @Column(name = "nombre",nullable = false, length = 15, unique = true)
@@ -60,6 +62,8 @@ public class Album {
     private String imagen;
     
     @Column(name = "fecha_lanzamiento",nullable = false , unique = false)
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fLanzamiento;
     
     @Column(name = "num_ventas",nullable = false , unique = false)
@@ -78,7 +82,7 @@ public class Album {
         this.imagen = imagen;
         this.fLanzamiento = fLanzamiento;
         this.numVentas = numVentas;
-    }   
+    }
 
     public Integer getIdAlbum() {
         return idAlbum;

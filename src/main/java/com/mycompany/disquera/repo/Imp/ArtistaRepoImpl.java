@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class ArtistaRepoImpl implements IArtista{
     
-    @PersistenceContext(unitName = "conexionPostgresql")
+    @PersistenceContext(unitName = "Persistencia")
     private EntityManager em;
 
     @Override

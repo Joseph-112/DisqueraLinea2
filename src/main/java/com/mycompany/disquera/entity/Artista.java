@@ -5,6 +5,7 @@
  */
 package com.mycompany.disquera.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -18,6 +19,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -30,7 +32,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Artista.ListarTodos", query = "SELECT a FROM Artista a")
 })
 
-public class Artista {
+public class Artista implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idArtista;
@@ -42,7 +44,7 @@ public class Artista {
     private String nombreArtistico;
     
     @Column(name = "genero",nullable = false , unique = false)
-    private char genero;
+    private String genero;
     
     @Column(name = "nacionalidad",nullable = false , length = 15 ,unique = false)
     private String nacionalidad;
@@ -51,15 +53,19 @@ public class Artista {
     private String imagen;
     
     @Column(name = "fecha_nacimiento",nullable = false , unique = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fNacimiento;
     
     @OneToMany(mappedBy = "artista", fetch = FetchType.LAZY, cascade= CascadeType.ALL, orphanRemoval = true)
     private List<Cancion> cancion;
 
+    @OneToMany(mappedBy = "artista", fetch = FetchType.LAZY, cascade= CascadeType.ALL, orphanRemoval = true)
+    private List<Album> album;
+
     public Artista() {
     }
 
-    public Artista(String nombre, String nombreArtistico, char genero, String nacionalidad, String imagen, Date fNacimiento, List<Cancion> cancion) {
+    public Artista(String nombre, String nombreArtistico, String genero, String nacionalidad, String imagen, Date fNacimiento, List<Cancion> cancion, List<Album> album) {
         this.nombre = nombre;
         this.nombreArtistico = nombreArtistico;
         this.genero = genero;
@@ -67,7 +73,9 @@ public class Artista {
         this.imagen = imagen;
         this.fNacimiento = fNacimiento;
         this.cancion = cancion;
+        this.album = album;
     }
+
 
     public Integer getIdArtista() {
         return idArtista;
@@ -85,12 +93,20 @@ public class Artista {
         this.nombre = nombre;
     }
 
-    public char getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(char genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public List<Cancion> getCancion() {
+        return cancion;
+    }
+
+    public void setCancion(List<Cancion> cancion) {
+        this.cancion = cancion;
     }
 
     public String getNacionalidad() {
@@ -123,6 +139,14 @@ public class Artista {
 
     public void setNombreArtistico(String nombreArtistico) {
         this.nombreArtistico = nombreArtistico;
+    }
+
+    public List<Album> getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(List<Album> album) {
+        this.album = album;
     }
     
 }

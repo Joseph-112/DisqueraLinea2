@@ -8,13 +8,20 @@ package com.mycompany.disquera.repo.Imp;
 import com.mycompany.disquera.entity.Album;
 import com.mycompany.disquera.respository.IAlbum;
 import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
  * @author Joseph
  */
+@Stateless
 public class AlbumRepoImpl implements IAlbum{
 
+    @PersistenceContext(unitName = "Persistencia")
+    private EntityManager em;
+    
     @Override
     public List<Album> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

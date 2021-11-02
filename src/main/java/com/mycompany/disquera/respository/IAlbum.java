@@ -6,12 +6,14 @@
 package com.mycompany.disquera.respository;
 
 import com.mycompany.disquera.entity.Album;
+import javax.ejb.Local;
 
 
 /**
  *
  * @author Joseph
  */
+@Local
 public interface IAlbum extends ICrud<Album, Integer> {
     
 }

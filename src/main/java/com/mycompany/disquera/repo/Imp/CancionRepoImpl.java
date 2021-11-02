@@ -20,7 +20,7 @@ import javax.persistence.TypedQuery;
 @Stateless
 public class CancionRepoImpl implements ICancion{
     
-    @PersistenceContext(unitName = "conexionPostgresql")
+    @PersistenceContext(unitName = "Persistencia")
     private EntityManager em;    
 
     @Override

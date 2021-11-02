@@ -5,6 +5,7 @@
  */
 package com.mycompany.disquera.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -28,7 +30,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Cancion.ListarTodas", query = "SELECT c FROM Cancion c")
 })
 
-public class Cancion {
+public class Cancion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCancion;
@@ -36,6 +38,10 @@ public class Cancion {
     @ManyToOne
     @JoinColumn(name = "id_artista", nullable = false)
     private Artista artista;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_album", nullable = false)
+    private Album album;
     
     @Column(name = "nombre",nullable = false, length = 15, unique = true)
     private String nombre;
@@ -53,6 +59,7 @@ public class Cancion {
     private String imagen;
     
     @Column(name = "fecha_lanzamiento",nullable = false , unique = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fLanzamiento;
     
     @Column(name = "num_ventas",nullable = false , unique = false)
@@ -64,8 +71,9 @@ public class Cancion {
     public Cancion() {
     }
 
-    public Cancion(Artista artista, String nombre, String descripcion, Integer duracion, String nacionalidad, String imagen, Date fLanzamiento, Integer numVentas, Integer precio) {
+    public Cancion(Artista artista, Album album, String nombre, String descripcion, Integer duracion, String nacionalidad, String imagen, Date fLanzamiento, Integer numVentas, Integer precio) {
         this.artista = artista;
+        this.album = album;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.duracion = duracion;
@@ -75,6 +83,8 @@ public class Cancion {
         this.numVentas = numVentas;
         this.precio = precio;
     }
+
+   
 
     public Integer getNumVentas() {
         return numVentas;
@@ -156,6 +166,14 @@ public class Cancion {
 
     public void setfLanzamiento(Date fLanzamiento) {
         this.fLanzamiento = fLanzamiento;
+    }
+
+    public Album getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
     }
     
     
