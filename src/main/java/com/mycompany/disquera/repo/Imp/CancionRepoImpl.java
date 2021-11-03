@@ -5,6 +5,7 @@
  */
 package com.mycompany.disquera.repo.Imp;
 
+import com.mycompany.disquera.entity.Artista;
 import com.mycompany.disquera.entity.Cancion;
 import com.mycompany.disquera.respository.ICancion;
 import java.util.List;
@@ -23,30 +24,35 @@ public class CancionRepoImpl implements ICancion{
     @PersistenceContext(unitName = "Persistencia")
     private EntityManager em;    
 
-    @Override
+        @Override
     public List<Cancion> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TypedQuery<Cancion> query = em.createNamedQuery("Cancion.ListarTodos", Cancion.class);
+        return query.getResultList();
     }
 
     @Override
     public Cancion listarPorId(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return em.find(Cancion.class, id);
     }
 
     @Override
     public void guardar(Cancion obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.em.persist(obj);
     }
 
     @Override
     public void editar(Cancion obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.em.merge(obj);
     }
 
     @Override
     public void eliminar(Cancion obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.em.remove(obj);
     }
 
+    @Override
+    public List<Cancion> listarPorArtista(Artista artista) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -27,7 +27,11 @@ import javax.persistence.Temporal;
 @Table(name = "Cancion")
 
 @NamedQueries({
-    @NamedQuery(name = "Cancion.ListarTodas", query = "SELECT c FROM Cancion c")
+    @NamedQuery(name = "Cancion.ListarTodas", query = "SELECT c FROM Cancion c"),
+    @NamedQuery(name = "Cancion.ListarPorArtista", query = "SELECT c FROM Cancion c WHERE id_artista = ? "),
+    @NamedQuery(name = "Cancion.ListarPorAlbum", query = "SELECT c FROM Cancion c WHERE id_artista = ? ")
+
+        
 })
 
 public class Cancion implements Serializable {

@@ -11,43 +11,42 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 /**
  *
  * @author ASUS
  */
 @Stateless
-public class ArtistaRepoImpl implements IArtista{
-    
+public class ArtistaRepoImpl implements IArtista {
+
     @PersistenceContext(unitName = "Persistencia")
     private EntityManager em;
 
     @Override
     public List<Artista> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TypedQuery<Artista> query = em.createNamedQuery("Artista.ListarTodos", Artista.class);
+        return query.getResultList();
     }
 
     @Override
     public Artista listarPorId(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return em.find(Artista.class, id);
     }
 
     @Override
     public void guardar(Artista obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.em.persist(obj);
     }
 
     @Override
     public void editar(Artista obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.em.merge(obj);
     }
 
     @Override
     public void eliminar(Artista obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.em.remove(obj);
     }
 
-
-    
-    
 }
