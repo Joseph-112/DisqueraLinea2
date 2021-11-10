@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CalendarioComponent } from 'src/app/shared/widgets/calendario/calendario.component';
 import { FormArtistaComponent } from 'src/app/shared/widgets/form-artista/form-artista.component';
 import {MatDialog} from '@angular/material/dialog';
+import { FormCancionComponent } from 'src/app/shared/widgets/form-cancion/form-cancion.component';
 
 @Component({
   selector: 'app-posts',
@@ -21,7 +22,7 @@ export class PostsComponent implements OnInit {
   }
 
   openDialogCancion() {
-    const dialogRef = this.dialog.open( FormArtistaComponent);
+    const dialogRef = this.dialog.open( FormCancionComponent);
   }
 
 }

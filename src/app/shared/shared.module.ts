@@ -23,6 +23,7 @@ import { CardComponent } from './widgets/card/card.component';
 import { CalendarioComponent } from './widgets/calendario/calendario.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormArtistaComponent } from './widgets/form-artista/form-artista.component';
+import { FormCancionComponent } from './widgets/form-cancion/form-cancion.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormArtistaComponent } from './widgets/form-artista/form-artista.compon
     BoxComponent,
     CardComponent,
     CalendarioComponent,
-    FormArtistaComponent
+    FormArtistaComponent,
+    FormCancionComponent
     
   ],
   imports: [
@@ -59,7 +61,9 @@ import { FormArtistaComponent } from './widgets/form-artista/form-artista.compon
     SidebarComponent,
     BoxComponent,
     CardComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    FormArtistaComponent,
+    FormCancionComponent
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-form-artista',
@@ -16,9 +15,7 @@ export class FormArtistaComponent implements OnInit {
     {value: 'rock', viewValue: 'Rock'},
     {value: 'metal', viewValue: 'Metal'},
     {value: 'pop', viewValue: 'Pop'},
-  ];
-
-  
+  ];  
 }
 
 interface Genero {
