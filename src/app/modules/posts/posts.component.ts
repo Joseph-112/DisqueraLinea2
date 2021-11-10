@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarioComponent } from 'src/app/shared/widgets/calendario/calendario.component';
+import { FormArtistaComponent } from 'src/app/shared/widgets/form-artista/form-artista.component';
 import {MatDialog} from '@angular/material/dialog';
 
 @Component({
@@ -15,8 +16,12 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  openDialog() {
-    const dialogRef = this.dialog.open( CalendarioComponent);
-
+  openDialogArtista() {
+    const dialogRef = this.dialog.open( FormArtistaComponent);
   }
+
+  openDialogCancion() {
+    const dialogRef = this.dialog.open( FormArtistaComponent);
+  }
+
 }

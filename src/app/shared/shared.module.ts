@@ -12,6 +12,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -20,6 +22,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widgets/card/card.component';
 import { CalendarioComponent } from './widgets/calendario/calendario.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FormArtistaComponent } from './widgets/form-artista/form-artista.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     SidebarComponent,
     BoxComponent,
     CardComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    FormArtistaComponent
     
   ],
   imports: [
@@ -45,7 +49,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDialogModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatInputModule,
+    MatSelectModule
   ],
   exports: [
     HeaderComponent,
