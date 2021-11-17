@@ -1,4 +1,4 @@
-<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Llene los datos del Artista</h2>
+<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Llene los datos de la canción</h2>
 <mat-dialog-content class="mat-h3 or .mat-subheading-2">
   
 
@@ -11,7 +11,7 @@
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Nombre artístico</mat-label>
+        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Descripción</mat-label>
         <input matInput>
     </mat-form-field>
     <mat-divider></mat-divider>
@@ -27,13 +27,19 @@
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label><mat-icon>list</mat-icon> Nacionalidad</mat-label>
+        <mat-label><mat-icon>list</mat-icon> Precio</mat-label>
         <input matInput>
     </mat-form-field>
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label>Fecha de nacimiento</mat-label>
+        <mat-label><mat-icon>list</mat-icon> Duración</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Fecha de Lanzamiento</mat-label>
         <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>

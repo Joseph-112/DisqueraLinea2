@@ -31,6 +31,11 @@ import { FormArtistaEliminarComponent } from './widgets/form-artista-eliminar/fo
 import { CancionOpComponent } from './../modules/posts/cancion-op/cancion-op.component';
 import { FormArtistaConsultarComponent } from './widgets/form-artista-consultar/form-artista-consultar.component';
 import { FormArtistaEditarComponent } from './widgets/form-artista-editar/form-artista-editar.component';
+import { AlbumOpComponent } from '../modules/posts/album-op/album-op.component';
+import { FormCancionComponent } from './widgets/form-cancion/form-cancion.component';
+import { FormCancionEliminarComponent } from './widgets/form-cancion-eliminar/form-cancion-eliminar.component';
+import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/form-cancion-consultar.component';
+import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { FormArtistaEditarComponent } from './widgets/form-artista-editar/form-a
     FormArtistaEliminarComponent,
     CancionOpComponent,
     FormArtistaConsultarComponent,
-    FormArtistaEditarComponent
+    FormArtistaEditarComponent,
+    AlbumOpComponent,
+    FormCancionComponent,
+    FormCancionEliminarComponent,
+    FormCancionConsultarComponent,
+    FormCancionEditarComponent
     
     
   ],

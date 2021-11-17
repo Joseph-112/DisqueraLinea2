@@ -1,0 +1,25 @@
+.mat-form-field{
+    background-color: rgba(8, 8, 8, 0.486);
+    align-content: center;
+    width: 500px;
+}
+.mat-dialog-content{
+    background-color: rgb(60, 69, 73);
+    width: 800px;
+    top: 12px;
+    align-content: center;
+}
+.mat-dialog-title{
+    height: 22px;
+    align-content: center;
+    
+}
+.mat-icon{
+border: 12px;
+}
+.hover-class:hover {
+    background-color: red;
+  }
+  .hover-class1:hover {
+    background-color: rgba(0, 255, 21, 0.589);
+  }

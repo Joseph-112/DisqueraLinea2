@@ -7,11 +7,13 @@
             <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
             <input matInput>
         </mat-form-field>
+
+        
  
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Nombre artístico</mat-label>
+        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Descripción</mat-label>
         <input matInput>
     </mat-form-field>
     <mat-divider></mat-divider>
@@ -27,19 +29,33 @@
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label><mat-icon>list</mat-icon> Nacionalidad</mat-label>
+        <mat-label><mat-icon>list</mat-icon> Duración </mat-label>
         <input matInput>
     </mat-form-field>
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label>Fecha de nacimiento</mat-label>
+        <mat-label>Fecha de Lanzamiento</mat-label>
         <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-divider></mat-divider>
         <mat-divider></mat-divider>
     </mat-form-field>
+
+    
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Precio </mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+
+<mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Número de Ventas </mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
