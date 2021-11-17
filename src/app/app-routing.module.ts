@@ -4,16 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './administrador/default/default.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [{
   path: '',
-  component: DefaultComponent,
+  component: LoginComponent,
   children: [{
-    path: '',
+    path: 'Dashboard',
     component: DashboardComponent
   }, {
-
-
     path: 'posts',
     component: PostsComponent
   }]
