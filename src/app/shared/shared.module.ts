@@ -23,6 +23,14 @@ import { CardComponent } from './widgets/card/card.component';
 import { CalendarioComponent } from './widgets/calendario/calendario.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormArtistaComponent } from './widgets/form-artista/form-artista.component';
+import { FormAlbumComponent } from './widgets/form-album/form-album.component';
+import { FormAlbumEliminarComponent } from './widgets/form-album-eliminar/form-album-eliminar.component';
+import { FormAlbumConsultarComponent } from './widgets/form-album-consultar/form-album-consultar.component';
+import { FormAlbumEditarComponent } from './widgets/form-album-editar/form-album-editar.component';
+import { FormArtistaEliminarComponent } from './widgets/form-artista-eliminar/form-artista-eliminar.component';
+import { CancionOpComponent } from './../modules/posts/cancion-op/cancion-op.component';
+import { FormArtistaConsultarComponent } from './widgets/form-artista-consultar/form-artista-consultar.component';
+import { FormArtistaEditarComponent } from './widgets/form-artista-editar/form-artista-editar.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +40,23 @@ import { FormArtistaComponent } from './widgets/form-artista/form-artista.compon
     BoxComponent,
     CardComponent,
     CalendarioComponent,
-    FormArtistaComponent
+    FormArtistaComponent,
+    FormAlbumComponent,
+    FormAlbumEliminarComponent,
+    FormAlbumConsultarComponent,
+    FormAlbumEditarComponent,
+    FormArtistaEliminarComponent,
+    CancionOpComponent,
+    FormArtistaConsultarComponent,
+    FormArtistaEditarComponent
+    
     
   ],
   imports: [
-    CommonModule,
+  
+
+
+  CommonModule,
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,

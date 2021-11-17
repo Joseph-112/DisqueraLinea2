@@ -17,3 +17,9 @@ img {
     object-fit:cover;
     border-radius:50%;
 }
+.mat-nav-list{
+background-color: #445455;
+}
+.mat-divider{
+    background-color: #FFFFFF;
+}

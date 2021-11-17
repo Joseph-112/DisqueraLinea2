@@ -10,6 +10,7 @@ mat-drawer {
 
 mat-drawer-container{
     height: 100%;
+    background-color: rgb(224, 231, 238);
 }
 
 mat-drawer-content{
