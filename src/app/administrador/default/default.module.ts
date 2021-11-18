@@ -18,7 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent
+    PostsComponent 
   ],
   imports: [
     CommonModule,

@@ -10,9 +10,7 @@ import { AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './administrador/default/default.module';
-
-
-
+import { LoginModule } from './login/login/login.module';
 
 
 
@@ -21,7 +19,7 @@ const routes: Routes = [];
 @NgModule({
   declarations: [
     AppComponent,
-    AdministradorComponent,
+    AdministradorComponent
     
     
   
@@ -29,11 +27,12 @@ const routes: Routes = [];
    
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
+  
+  BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
+    LoginModule,
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
