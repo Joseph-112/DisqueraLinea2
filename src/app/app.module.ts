@@ -10,10 +10,7 @@ import { AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './administrador/default/default.module';
-
-
-
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 const routes: Routes = [];
@@ -35,7 +32,10 @@ const routes: Routes = [];
     BrowserAnimationsModule,
     DefaultModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    
+    
   ],
   providers: [AdminServiceService],
   bootstrap: [AppComponent]

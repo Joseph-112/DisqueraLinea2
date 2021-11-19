@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {MatSortModule} from '@angular/material/sort';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -36,6 +37,8 @@ import { FormCancionComponent } from './widgets/form-cancion/form-cancion.compon
 import { FormCancionEliminarComponent } from './widgets/form-cancion-eliminar/form-cancion-eliminar.component';
 import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/form-cancion-consultar.component';
 import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,8 @@ import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-c
     FormCancionComponent,
     FormCancionEliminarComponent,
     FormCancionConsultarComponent,
-    FormCancionEditarComponent
+    FormCancionEditarComponent,
+    
     
     
   ],
@@ -81,7 +85,10 @@ import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-c
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   exports: [
     HeaderComponent,
