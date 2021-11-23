@@ -36,20 +36,27 @@ import { FormCancionComponent } from './widgets/form-cancion/form-cancion.compon
 import { FormCancionEliminarComponent } from './widgets/form-cancion-eliminar/form-cancion-eliminar.component';
 import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/form-cancion-consultar.component';
 import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
+import { CardAlbumComponent } from './widgets/card-album/card-album.component';
+import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+
     BoxComponent,
     CardComponent,
+    CardAlbumComponent,
+
     CalendarioComponent,
+
     FormArtistaComponent,
     FormAlbumComponent,
     FormAlbumEliminarComponent,
     FormAlbumConsultarComponent,
     FormAlbumEditarComponent,
+
     FormArtistaEliminarComponent,
     CancionOpComponent,
     FormArtistaConsultarComponent,
@@ -58,15 +65,15 @@ import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-c
     FormCancionComponent,
     FormCancionEliminarComponent,
     FormCancionConsultarComponent,
-    FormCancionEditarComponent
-    
-    
+    FormCancionEditarComponent,
+
+    CatalogoComponent
   ],
   imports: [
-  
 
 
-  CommonModule,
+
+    CommonModule,
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,
@@ -89,7 +96,9 @@ import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-c
     SidebarComponent,
     BoxComponent,
     CardComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    CardAlbumComponent,
+    CatalogoComponent
   ]
 })
 export class SharedModule { }

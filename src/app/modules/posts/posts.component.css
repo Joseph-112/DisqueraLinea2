@@ -6,6 +6,6 @@
     background-color: #020641;
 }
 .hover-class:hover {
-    background-color:rgba(80, 145, 230, 0.842);
+    background-image: url('/src/assets/img/disquera.jpg');
   }
   

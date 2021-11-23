@@ -3,11 +3,11 @@ import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 
 @Component({
-  selector: 'app-widget-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-widget-card-album',
+  templateUrl: './card-album.component.html',
+  styleUrls: ['./card-album.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardAlbumComponent implements OnInit {
 
   @Input()
   label!: string;
@@ -30,7 +30,7 @@ export class CardComponent implements OnInit {
           height: 60*/
       },
       title: {
-          text: 'Canciones más vendidas'
+          text: 'Albumes más vendidos'
       },
       subtitle: {
           text: null
@@ -43,7 +43,7 @@ export class CardComponent implements OnInit {
       },
       xAxis: {
           categories: [
-              'Canciones'
+              'Albumes'
               
               /*'Jul',
               'Aug',
@@ -75,19 +75,19 @@ export class CardComponent implements OnInit {
           }
       },
       series: [{
-          name: 'Back in black',
+          name: 'Black album',
           data: [55/*, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4*/]
   
       }, {
-          name: 'Back to black',
+          name: 'Ride the lighting',
           data: [11/*, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3*/]
   
       }, {
-          name: 'Symphony of destruction',
+          name: 'Bullet for My Valentine',
           data: [8/*, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2*/]
   
       }, {
-          name: 'Snuff',
+          name: 'Rust in peace',
           data: [24/*, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1*/]
   
       }]

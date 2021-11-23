@@ -11,24 +11,23 @@ import { LoginComponent } from './login/login/login.component';
 
 
 const routes: Routes = [{
+
   path: '',
-  component: LoginComponent,
+  component: DefaultComponent,
   children: [{
     path: '',
     component: DashboardComponent
   }, {
-
-
     path: 'posts',
     component: PostsComponent
-  },{
-    path:'cancionOp',
+  }, {
+    path: 'cancionOp',
     component: CancionOpComponent
-  },{
+  }, {
     path: 'albumOp',
     component: AlbumOpComponent
   }
-]
+  ]
 
 }
 
@@ -40,8 +39,7 @@ const routes: Routes = [{
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  
-exports: [RouterModule]
+
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
- 

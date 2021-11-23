@@ -1,48 +1,64 @@
-<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Llene los datos del Artista</h2>
+<h2 mat-dialog-title>
+    <mat-icon>music_video</mat-icon>Llene los datos del Artista
+</h2>
 <mat-dialog-content class="mat-h3 or .mat-subheading-2">
-  
 
-   
-        <mat-form-field appearance="fill">
-            <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
-            <input matInput>
-        </mat-form-field>
- 
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>
+            <mat-icon>perm_identity</mat-icon> Nombre
+        </mat-label>
+        <input matInput>
+    </mat-form-field>
+
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Nombre artístico</mat-label>
+        <mat-label>
+            <mat-icon>perm_contact_calendar</mat-icon> Nombre artístico
+        </mat-label>
         <input matInput>
     </mat-form-field>
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label><mat-icon>library_music</mat-icon>      Género musical</mat-label>
+        <mat-label>
+            <mat-icon>library_music</mat-icon> Género musical
+        </mat-label>
         <mat-select>
-          <mat-option *ngFor="let genero of generos" [value]="genero.value">
-            {{genero.viewValue}}
-          </mat-option>
+            <mat-option *ngFor="let genero of generos" [value]="genero.value">
+                {{genero.viewValue}}
+            </mat-option>
         </mat-select>
-      </mat-form-field>
+    </mat-form-field>
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
-        <mat-label><mat-icon>list</mat-icon> Nacionalidad</mat-label>
+        <mat-label>
+            <mat-icon>list</mat-icon> Nacionalidad
+        </mat-label>
         <input matInput>
     </mat-form-field>
     <mat-divider></mat-divider>
     <br>
+
     <mat-form-field appearance="fill">
         <mat-label>Fecha de nacimiento</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput formControlName="fNacimiento" (dateInput)="addEvent('input',$event)" (dateChange)="addEvent('input',$event)" [matDatepicker]="picker">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-divider></mat-divider>
         <mat-divider></mat-divider>
     </mat-form-field>
 
+
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button  mat-button  color="#FFFFFF" class="hover-class"[mat-dialog-close]="true" ><mat-icon>cancel</mat-icon> Cancelar</button>
-    <button mat-button color="#FFFFFF" class="hover-class1"[mat-dialog-close]="true" cdkFocusInitial> <mat-icon>check_circle</mat-icon> Aceptar</button>
+    <button mat-button color="#FFFFFF" class="hover-class" [mat-dialog-close]="true">
+        <mat-icon>cancel</mat-icon> Cancelar
+    </button>
+    <button mat-button color="#FFFFFF" class="hover-class1" [mat-dialog-close]="true" cdkFocusInitial>
+        <mat-icon>check_circle</mat-icon> Aceptar
+    </button>
 </mat-dialog-actions>

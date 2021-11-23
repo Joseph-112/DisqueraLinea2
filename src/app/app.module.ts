@@ -20,11 +20,6 @@ const routes: Routes = [];
   declarations: [
     AppComponent,
     AdministradorComponent
-    
-    
-  
-   
-   
   ],
   imports: [
   

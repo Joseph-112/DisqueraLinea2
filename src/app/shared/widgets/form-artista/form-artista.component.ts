@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators , FormGroup} from '@angular/forms';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-form-artista',
   templateUrl: './form-artista.component.html',
   styleUrls: ['./form-artista.component.css']
+
 })
 export class FormArtistaComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit(): void {
   }
   generos: Genero[] = [
@@ -18,7 +20,10 @@ export class FormArtistaComponent implements OnInit {
     {value: 'pop', viewValue: 'Pop'},
   ];
 
-  
+  addEvent(type: string, event : MatDatepickerInputEvent<Date>){
+    console.log(event.value)
+  }
+
 }
 
 interface Genero {
