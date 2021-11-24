@@ -11,14 +11,15 @@ import { LoginComponent } from './login/login/login.component';
 
 
 const routes: Routes = [{
+  path: 'log',
+    component: LoginComponent
+  },{
   path: '',
-  component: LoginComponent,
+  component: DefaultComponent,
   children: [{
     path: '',
     component: DashboardComponent
   }, {
-
-
     path: 'posts',
     component: PostsComponent
   },{
@@ -28,6 +29,9 @@ const routes: Routes = [{
     path: 'albumOp',
     component: AlbumOpComponent
   }
+  
+
+
 ]
 
 }

@@ -18,10 +18,14 @@ export class FormArtistaComponent implements OnInit {
     {value: 'pop', viewValue: 'Pop'},
   ];
 
+  guardarArtista(){
   
+  }
 }
 
 interface Genero {
   value: string;
   viewValue: string;
 }
+
+
