@@ -13,6 +13,7 @@ import { DefaultModule } from './administrador/default/default.module';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { LoginModule } from './login/login/login.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [];
   imports: [
   
   BrowserModule,
+
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
@@ -38,6 +40,9 @@ const routes: Routes = [];
     RouterModule.forRoot(routes),
     HttpClientModule,
     MatSnackBarModule,
+    FormsModule,
+    
+    
     
     
   ],

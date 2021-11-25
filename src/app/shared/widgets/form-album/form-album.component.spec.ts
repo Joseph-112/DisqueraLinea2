@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {Component} from '@angular/core';
 
 import { FormAlbumComponent } from './form-album.component';
+
+
+
 
 describe('FormAlbumComponent', () => {
   let component: FormAlbumComponent;

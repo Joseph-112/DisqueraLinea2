@@ -46,5 +46,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button  mat-button  color="#FFFFFF" class="hover-class"[mat-dialog-close]="true" ><mat-icon>cancel</mat-icon> Cancelar</button>
-    <button mat-button color="#FFFFFF" class="hover-class1"[mat-dialog-close]="true" (click)="guardarArtista()"> <mat-icon>check_circle</mat-icon> Aceptar</button>
+    <button mat-button color="#FFFFFF" class="hover-class1"[mat-dialog-close]="true" cdkFocusInitial  (click)="guardarArtista()"> <mat-icon>check_circle</mat-icon> Aceptar</button>
 </mat-dialog-actions>

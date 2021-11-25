@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormAlbumComponent implements OnInit {
 
+  startDate = new Date(2021, 0, 1);
+  minDate = new Date(2000, 0, 1);
+  maxDate = new Date(2021, 11, 1);
   constructor() { }
 
   ngOnInit(): void {
