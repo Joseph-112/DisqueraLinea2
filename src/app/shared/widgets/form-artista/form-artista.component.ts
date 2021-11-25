@@ -34,10 +34,6 @@ export class FormArtistaComponent implements OnInit {
   ];
 
   guardarArtista(){
-<<<<<<< HEAD
-  
-  }
-=======
     let nombre= ((document.getElementById("nombre") as HTMLInputElement).value);
       let nomArtistico= ((document.getElementById("nomArtistico") as HTMLInputElement).value);
       let nacionalidad= ((document.getElementById("nacionalidad") as HTMLInputElement).value);
@@ -59,7 +55,6 @@ export class FormArtistaComponent implements OnInit {
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.artista.nombre ="Ivan";
     console.log(this.artista);    
->>>>>>> e31262e6137e2fa79178cdbd1d638ae2a96afde0
 }
   
   changeRatio(event: MatSelectChange) {
