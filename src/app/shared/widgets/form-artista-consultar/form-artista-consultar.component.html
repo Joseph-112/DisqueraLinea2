@@ -1,7 +1,67 @@
-<form action="../../form-result.php" method="post" target="_blank">
-  <p>
-  <img src="https://cdn-icons.flaticon.com/png/128/14/premium/14470.png?token=exp=1637098284~hmac=c2cddf0cd93d863fc1d3f4ca4cfb0637" width="23" height="20">
-    Buscar Música: <input type="search" name="busquedamusica" placeholder=" Artista...">
-    <input type="submit" value="Buscar">
-  </p>
-</form>
+<mat-form-field>
+  <mat-label>Filtro</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+</mat-form-field>
+<div class="mat-elevation-z8">
+<table mat-table  [dataSource]="dataSource" matSort >
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="nombreArtistico">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre artistico </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombreArtistico}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="genero">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Genero </th>
+      <td mat-cell *matCellDef="let element"> {{element.genero}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nacionalidad">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nacionalidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.nacionalidad}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="imagen">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+      <td mat-cell *matCellDef="let element"> {{element.imagen}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="fNacimiento">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header><p><span class="glyphicon glyphicon-user"></span> Fecha de Nacimiento</p> </th>
+      <td mat-cell *matCellDef="let element"> 
+          <span>{{element.fNacimiento | date:'yyyy-MM-dd '}}</span>
+      </td>
+  </ng-container>
+
+  <ng-container matColumnDef="albunes">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Albumes </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-stroked-button (click)="verAlbunes(element.albunes)">Ver albumes</button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="canciones">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Canciones </th>
+    <td mat-cell *matCellDef="let element"> 
+      <button mat-stroked-button (click)="verCanciones(element.canciones)">Ver canciones</button>
+    </td>
+  </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
