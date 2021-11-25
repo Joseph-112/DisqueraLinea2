@@ -5,20 +5,21 @@
    
         <mat-form-field appearance="fill">
             <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
-            <input matInput id="nombre">
+            <input matInput id="nombre" value={{artista.nombre}}>
         </mat-form-field>
  
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
         <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Nombre artístico</mat-label>
-        <input matInput id="nomArtistico">
+        <input matInput id="nomArtistico" value={{artista.nombreArtistico}}>
     </mat-form-field>
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
         <mat-label><mat-icon>library_music</mat-icon>Género musical</mat-label>
-        <mat-select (selectionChange)=changeRatio($event) formControlName="transaccionGenero">
+        <mat-select 
+         (selectionChange)=changeRatio($event) formControlName="transaccionGenero">
           <mat-option *ngFor="let genero of generos" [value]="genero.value" id="genero.transaccion">
             {{genero.viewValue}}
           </mat-option>
@@ -28,14 +29,15 @@
     <br>
     <mat-form-field appearance="fill">
         <mat-label><mat-icon>list</mat-icon> Nacionalidad</mat-label>
-        <input matInput id="nacionalidad">
+        <input matInput id="nacionalidad" value={{artista.nacionalidad}}>
     </mat-form-field>
     <mat-divider></mat-divider>
     <br>
     <mat-form-field appearance="fill">
         <mat-label>Fecha de nacimiento</mat-label>
         <input  matInput [matDatepicker]="picker" id="fNacimiento" 
-        (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+        (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"
+        value={{artista.fNacimiento}}>
         
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker startView="year" ></mat-datepicker>

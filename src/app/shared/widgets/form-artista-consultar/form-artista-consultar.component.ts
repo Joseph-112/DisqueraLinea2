@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,6 +8,10 @@ import { Album } from 'src/app/_model/Album';
 import { Artista } from 'src/app/_model/Artista';
 import { Cancion } from 'src/app/_model/Cancion';
 import { ArtistaService } from 'src/app/_service/artista.service';
+import { DetalleAlbumService } from 'src/app/_service/detalle-album.service';
+import { DetalleCancionService } from 'src/app/_service/detalle-cancion.service';
+import { FormAlbumDetalleComponent } from './form-album-detalle/form-album-detalle.component';
+import { FormCancionDetalleComponent } from './form-cancion-detalle/form-cancion-detalle.component';
 
 @Component({
   selector: 'app-form-artista-consultar',
@@ -19,19 +24,19 @@ import { ArtistaService } from 'src/app/_service/artista.service';
 
 export class FormArtistaConsultarComponent implements OnInit {
 
+  @Output()detalleAlbum = Array<Album>();
+  detalleCancion = Array<Cancion>();
+
   displayedColumns: string[] = ['id', 'nombre', 'nombreArtistico', 'genero', 'nacionalidad', 'imagen', 'fNacimiento','albunes','canciones'];
   dataSource = new MatTableDataSource <Artista>();
-  
-  displayedColumnsAlbunes: string[] = ['nombre'];
-  dataSourceAlbunes = new MatTableDataSource <Album>();
-
-  displayedColumnsCanciones: string[] = ['nombre'];
-  dataSourceCanciones = new MatTableDataSource <Cancion>();
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private artistaService : ArtistaService,
-    public route: ActivatedRoute) { }
+    public route: ActivatedRoute,
+    private detalleAlbumService : DetalleAlbumService,
+    private detalleCancionService : DetalleCancionService,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -48,11 +53,17 @@ export class FormArtistaConsultarComponent implements OnInit {
     });
   }
   
-  verAlbunes(albunes : Album[]){
+  verAlbunes(albumnes : Album[]){
     
+   this.detalleAlbumService.setDetalle(albumnes);
+   this.detalleAlbumService.setAuteriorUrl("/"); 
+   const dialogRef = this.dialog.open(FormAlbumDetalleComponent);
   }
-  verCanciones(Canciones : Cancion[]){
-
+  verCanciones(canciones : Cancion[]){
+    console.log(canciones);
+    this.detalleCancionService.setDetalle(canciones);
+    this.detalleCancionService.setAuteriorUrl("/"); 
+    const dialogRef = this.dialog.open(FormCancionDetalleComponent);
   }
 
   applyFilter(event: Event) {

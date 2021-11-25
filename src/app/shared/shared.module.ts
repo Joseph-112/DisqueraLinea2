@@ -39,6 +39,9 @@ import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/
 import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FormAlbumDetalleComponent } from './widgets/form-artista-consultar/form-album-detalle/form-album-detalle.component';
+import { FormCancionDetalleComponent } from './widgets/form-artista-consultar/form-cancion-detalle/form-cancion-detalle.component';
+import { FormEditarArtistaComponent } from './widgets/form-artista-editar/form-editar-artista/form-editar-artista.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FormCancionEliminarComponent,
     FormCancionConsultarComponent,
     FormCancionEditarComponent,
+    FormAlbumDetalleComponent,
+    FormCancionDetalleComponent,
+    FormEditarArtistaComponent,
     
     
     
