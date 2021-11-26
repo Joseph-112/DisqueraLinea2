@@ -1,6 +1,9 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
 <mat-form-field>
   <mat-label>Filtro</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar &#xF002;"style= "font-family: Arial, 'Font Awesome 5 Free'"
+   #input
+   type="search">
 </mat-form-field>
 <div class="mat-elevation-z8">
 <table mat-table  [dataSource]="dataSource" matSort >
