@@ -12,6 +12,9 @@ import { ArtistaService } from 'src/app/_service/artista.service';
   styleUrls: ['./form-artista.component.css']
 })
 export class FormArtistaComponent implements OnInit {
+  startDate = new Date(2014, 0, 1);
+  minDate = new Date(1980, 0, 1);
+  maxDate = new Date(2016, 11, 31);
 
   genero!: String;
   artista = new Artista();
