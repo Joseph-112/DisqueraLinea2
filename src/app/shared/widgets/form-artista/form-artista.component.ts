@@ -55,6 +55,7 @@ export class FormArtistaComponent implements OnInit {
   }
 
   changeRatio(event: MatSelectChange) {
+    console.log(event.value);
     this.genero = event.value;
   }
 

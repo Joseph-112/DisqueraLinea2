@@ -1,20 +1,25 @@
-<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Llene los datos del Album</h2>
+<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Editar datos del Album</h2>
 
 <mat-dialog-content class="mat-h3 or .mat-subheading-2">  
 
-   
-    <mat-form-field>
-        <mat-select  (selectionChange)=changeRatio($event) placeholder="Artista">
-            <mat-option *ngFor="let artista of artistas" [value]="artista.id">
-                {{ artista.nombre }}
-            </mat-option>
-        </mat-select>
-      </mat-form-field>
+        
 
-        <form class="custom-form" method="post" >
+        <form  >
+            <mat-form-field mat-form-field appearance="fill">
+                <mat-label><mat-icon>perm_identity</mat-icon>Nombre Artista</mat-label>
+                <input matInput id="nombre_artista" disabled value={{nomArtista.nombreArtistico}}>
+             </mat-form-field>   
+        <mat-form-field >
+            
+            <mat-select  (selectionChange)=changeRatio($event) placeholder="Artistas">
+                <mat-option *ngFor="let artista of artistas" [value]="artista.id">
+                    {{ artista.nombre }}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
-            <input matInput id="nombre"
+            <input matInput id="nombre" value={{album.nombre}}
             type="text"
             required="required"
             placeholder="nombre"
@@ -25,7 +30,7 @@
         <br>
         <mat-form-field appearance="fill">
         <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Descripción</mat-label>
-        <input matInput id="descripcion"
+        <input matInput id="descripcion" value={{album.descripcion}}
             type="text"
             required="required"
             placeholder="Descripcion"
@@ -37,7 +42,7 @@
         <br>
         <mat-form-field appearance="fill">
         <mat-label><mat-icon>list</mat-icon> Duración(Segundos) </mat-label>
-        <input matInput id="duracion"
+        <input matInput id="duracion" value={{album.duracion}}
         type="number"
             required="required"
             placeholder="Duracion en Minutos"
@@ -51,7 +56,7 @@
          <mat-form-field appearance="fill">
         <mat-label>Fecha de Lanzamiento</mat-label>
         <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" id="fLanzamiento" required
-        (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+        (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)" value={{album.fLanzamiento}}>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
          <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
         <mat-divider></mat-divider>
@@ -61,7 +66,7 @@
         <br> 
         <mat-form-field appearance="fill">
         <mat-label><mat-icon>list</mat-icon> Precio</mat-label>
-        <input matInput id="precio"
+        <input matInput id="precio" value={{album.precio}}
         type="number"
             required="required"
             placeholder="Duracion en Minutos"
@@ -77,7 +82,7 @@
         <br>
          <mat-form-field appearance="fill">
         <mat-label><mat-icon>list</mat-icon> Número de Ventas </mat-label>
-        <input matInput id="numVentas"
+        <input matInput id="numVentas" value={{album.numVentas}}
         type="number"
             required="required"
             placeholder="Ventas"
@@ -98,7 +103,7 @@
 
 
     <button  mat-button  color="#FFFFFF" class="hover-class"[mat-dialog-close]="true" ><mat-icon>cancel</mat-icon> Cancelar</button>
-    <button mat-button color="btn-btn-primary" class="hover-class1" type="submit"  (click)="guardarAlbum()" ><mat-icon>check_circle</mat-icon> Aceptar</button>
+    <button mat-button color="btn-btn-primary" class="hover-class1" type="submit"  (click)="editarAlbum()" ><mat-icon>check_circle</mat-icon> Aceptar</button>
 
     </form>
 </mat-dialog-content>
