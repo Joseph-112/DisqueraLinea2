@@ -1,0 +1,38 @@
+<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Datos del Artista</h2>
+<mat-dialog-content class="mat-h3 or .mat-subheading-2">
+  
+
+   
+        <mat-form-field appearance="fill">
+            <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
+            <input matInput id="nombre" disabled value={{artista.nombre}}>
+        </mat-form-field>
+ 
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Nombre artístico</mat-label>
+        <input matInput id="nomArtistico" disabled value={{artista.nombreArtistico}}>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>perm_contact_calendar</mat-icon>     Genero</mat-label>
+        <input matInput id="genero" disabled value={{artista.genero}}>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Nacionalidad</mat-label>
+        <input matInput id="nacionalidad" disabled value={{artista.nacionalidad}}>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Fecha de nacimiento</mat-label>
+        <input matInput id="fnacimiento" disabled value={{artista.fNacimiento}}>
+    </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+</mat-dialog-actions>

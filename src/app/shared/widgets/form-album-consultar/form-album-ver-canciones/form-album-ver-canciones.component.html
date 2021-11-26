@@ -1,0 +1,62 @@
+<mat-form-field>
+    <mat-label>Filtro</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+</mat-form-field>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="duracion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Duracion </th>
+            <td mat-cell *matCellDef="let element"> {{element.duracion}} </td>
+        </ng-container>
+        <ng-container matColumnDef="nacionalidad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nacionalidad </th>
+            <td mat-cell *matCellDef="let element"> {{element.nacionalidad}} </td>
+        </ng-container>
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
+            <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="imagen">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+            <td mat-cell *matCellDef="let element"> {{element.imagen}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fLanzamiento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p><span class="glyphicon glyphicon-user"></span> Fecha de Lanzamiento</p>
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <span>{{element.fLanzamiento | date:'yyyy-MM-dd '}}</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="numVentas">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> numero de Ventas </th>
+            <td mat-cell *matCellDef="let element"> {{element.numVentas}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
