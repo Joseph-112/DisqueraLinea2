@@ -1,4 +1,4 @@
-import { Component, OnInit, enableProdMode } from '@angular/core';
+import { Component, OnInit, enableProdMode, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 import { FormCancionEditarComponent } from 'src/app/shared/widgets/form-cancion-editar/form-cancion-editar.component';
@@ -17,8 +17,10 @@ export class LoginComponent implements OnInit {
   constructor(public dialog: MatDialog) {
     
    }
+   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
+    
   }
   
   openDialogEditarcancion(){
@@ -28,6 +30,21 @@ export class LoginComponent implements OnInit {
   sideBarToggler(){
     this.sideBarOpen= !this.sideBarOpen;
   }
+  toggleSideBar() {
+    this.toggleSideBarForMe.emit();
+    setTimeout(()=>{
+      window.dispatchEvent(
+        new Event('resize')
+      );
+    }, 300);
+  }
+
+
+
+
+
+  
+}
   
  
-}
+
