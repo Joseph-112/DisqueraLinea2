@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,6 +10,7 @@ import { ArtistaService } from 'src/app/_service/artista.service';
   selector: 'app-form-artista',
   templateUrl: './form-artista.component.html',
   styleUrls: ['./form-artista.component.css']
+
 })
 export class FormArtistaComponent implements OnInit {
   startDate = new Date(2014, 0, 1);
@@ -19,9 +20,9 @@ export class FormArtistaComponent implements OnInit {
   genero!: String;
   artista = new Artista();
   date = new Date();
-  
+
   checkDate!: Date;
-  constructor(private artistaService : ArtistaService,
+  constructor(private artistaService: ArtistaService,
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -29,9 +30,9 @@ export class FormArtistaComponent implements OnInit {
   }
 
   generos: Genero[] = [
-    {value: 'rock', viewValue: 'Rock'},
-    {value: 'metal', viewValue: 'Metal'},
-    {value: 'pop', viewValue: 'Pop'},
+    { value: 'rock', viewValue: 'Rock' },
+    { value: 'metal', viewValue: 'Metal' },
+    { value: 'pop', viewValue: 'Pop' },
   ];
 
   guardarArtista(){
@@ -64,7 +65,7 @@ export class FormArtistaComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
-        duration: 3000
+      duration: 3000
     });
   }
 }

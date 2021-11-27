@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Cancion } from '../_model/Cancion';
 import { CancionDto } from '../_model/CancionDto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CancionService {
-
 
   url: string = environment.HOST;
 

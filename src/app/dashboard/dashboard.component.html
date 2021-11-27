@@ -1,12 +1,12 @@
-<div>
+<!--<div>
     <app-widget-box></app-widget-box>
-</div>
+</div>-->
 <br>
 <mat-divider></mat-divider>
 <br>
 <div fxLayout="row" layoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
     <mat-form-field appearance="fill">
-        <mat-label>Seleccione el programa académico</mat-label>
+        <mat-label>Seleccione el artista</mat-label>
         <mat-select [(value)]="selected">
             <mat-option value="option0">None</mat-option>
             <mat-option value="option1">Administración de empresas</mat-option>
@@ -19,19 +19,13 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-        <mat-label>Seleccione el factor</mat-label>
+        <mat-label>Seleccione el Género</mat-label>
         <mat-select [(value)]="selectedFactor">
             <mat-option value="option0">None</mat-option>
-            <mat-option value="option1">Factor A: Misión y proyecto institucional</mat-option>
-            <mat-option value="option2">Factor B: Estudiantes y profesores</mat-option>
-            <mat-option value="option3">Factor C: Procesos académicos</mat-option>
-            <mat-option value="option4">Factor D: Espacios de investigación, innovación y creación artística y cultural</mat-option>
-            <mat-option value="option5">Factor E: Pertinencia e impacto social</mat-option>
-            <mat-option value="option6">Factor F: Autoevaluación y autorregulación</mat-option>
-            <mat-option value="option7">Factor G: Bienestar universitario</mat-option>
-            <mat-option value="option8">Factor H: Organización, gestión y administración</mat-option>
-            <mat-option value="option9">Factor I: Recursos de apoyo académico y planta física</mat-option>
-            <mat-option value="option10">Factor J: Recursos financieros</mat-option>
+            <mat-option value="option1">Rock</mat-option>
+            <mat-option value="option2">Pop</mat-option>
+            <mat-option value="option3">Metal</mat-option>
+            
         </mat-select>
     </mat-form-field>
 </div>
@@ -39,18 +33,25 @@
 <mat-divider></mat-divider>
 <br>
 <div fxLayout="row" layoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <mat-card fxFlex="25">
+    <mat-card fxFlex="50">
         <app-widget-card label="Users" total="18k" percentage="50%"></app-widget-card>
     </mat-card>
-    <mat-card fxFlex="25">
+    <mat-card fxFlex="50">
+        <app-widget-card-album label="Users" total="18k" percentage="50%"></app-widget-card-album>
+    </mat-card>
+    
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<div fxLayout="row" layoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    <mat-card fxFlex="50">
+        <app-widget-card-album label="Users" total="18k" percentage="50%"></app-widget-card-album>
+    </mat-card>
+    <mat-card fxFlex="50">
         <app-widget-card></app-widget-card>
     </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card></app-widget-card>
-    </mat-card>
+    
 </div>
 <br>
 <mat-divider></mat-divider>

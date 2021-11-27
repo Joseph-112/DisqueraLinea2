@@ -8,6 +8,7 @@ import { CancionOpComponent } from './modules/posts/cancion-op/cancion-op.compon
 import { FormAlbumEliminarComponent } from './shared/widgets/form-album-eliminar/form-album-eliminar.component';
 import { AlbumOpComponent } from './modules/posts/album-op/album-op.component';
 import { LoginComponent } from './login/login/login.component';
+import { CatalogoComponent } from './shared/widgets/catalogo/catalogo.component';
 
 
 const routes: Routes = [{
@@ -22,12 +23,15 @@ const routes: Routes = [{
   }, {
     path: 'posts',
     component: PostsComponent
-  },{
-    path:'cancionOp',
+  }, {
+    path: 'cancionOp',
     component: CancionOpComponent
-  },{
+  }, {
     path: 'albumOp',
     component: AlbumOpComponent
+  }, {
+    path: 'catalogo',
+    component: CatalogoComponent
   }
   
 
@@ -44,8 +48,7 @@ const routes: Routes = [{
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  
-exports: [RouterModule]
+
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
- 
