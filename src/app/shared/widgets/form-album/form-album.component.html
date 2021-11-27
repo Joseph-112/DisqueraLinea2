@@ -3,16 +3,19 @@
 <mat-dialog-content class="mat-h3 or .mat-subheading-2">  
 
    
-    <mat-form-field>
-        <mat-select  (selectionChange)=changeRatio($event) placeholder="Artista">
-            <mat-option *ngFor="let artista of artistas" [value]="artista.id">
-                {{ artista.nombre }}
-            </mat-option>
-        </mat-select>
-      </mat-form-field>
+  
 
         <form class="custom-form" method="post" >
-        <mat-form-field appearance="fill">
+        
+            <mat-form-field  appearance="fill">
+                <mat-select  (selectionChange)=changeRatio($event) placeholder="Artista">
+                    <mat-option *ngFor="let artista of artistas" [value]="artista.id">
+                        {{ artista.nombre }}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field appearance="fill">
             <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
             <input matInput id="nombre"
             type="text"
