@@ -8,6 +8,7 @@ import { CancionOpComponent } from './modules/posts/cancion-op/cancion-op.compon
 import { FormAlbumEliminarComponent } from './shared/widgets/form-album-eliminar/form-album-eliminar.component';
 import { AlbumOpComponent } from './modules/posts/album-op/album-op.component';
 import { LoginComponent } from './login/login/login.component';
+import { CatalogoComponent } from './shared/widgets/catalogo/catalogo.component';
 
 
 const routes: Routes = [{
@@ -26,6 +27,9 @@ const routes: Routes = [{
   }, {
     path: 'albumOp',
     component: AlbumOpComponent
+  }, {
+    path: 'catalogo',
+    component: CatalogoComponent
   }
   ]
 

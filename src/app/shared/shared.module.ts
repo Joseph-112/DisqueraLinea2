@@ -14,6 +14,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -38,6 +42,7 @@ import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/
 import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
 import { CardAlbumComponent } from './widgets/card-album/card-album.component';
 import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +72,9 @@ import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
     FormCancionConsultarComponent,
     FormCancionEditarComponent,
 
+
     CatalogoComponent
+
   ],
   imports: [
 
@@ -88,7 +95,11 @@ import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatCardModule
   ],
   exports: [
     HeaderComponent,

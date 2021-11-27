@@ -1,33 +1,69 @@
-<form action="../../form-result.php" method="post" target="_blank">
-  <p>
-  <img src="https://cdn-icons.flaticon.com/png/128/14/premium/14470.png?token=exp=1637098284~hmac=c2cddf0cd93d863fc1d3f4ca4cfb0637" width="23" height="20">
-    Búsqueda de música: <input type="search" name="busquedamusica" placeholder=" Artista...">
-    <input type="submit" value="Buscar">
-  </p>
-  <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-       <img class="card-img-top" src="https://finde.latercera.com/wp-content/uploads/2019/12/Ariana-Grande-ok-700x450.jpg" alt="Card image cap" >
-    <h5 class="card-title" color="#000000">Nombre Artista</h5>
-    <p class="card-text">Descripción.</p><a href="#" class="btn btn-warning" ><mat-icon>delete_forever</mat-icon>Eliminar Artista</a>
-  </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-   <div class="card">
-      <div class="card-body">
-       <img class="card-img-top" src="https://cadenaser00.epimg.net/ser/imagenes/2020/03/05/cultura/1583442271_089499_1583442371_noticia_normal.jpg" alt="Card image cap" >
-    <h5 class="card-title" color="#000000">Nombre Artista</h5>
-    <p class="card-text">Descripción.</p>
-    <a href="#" class="btn btn-warning" ><mat-icon>delete_forever</mat-icon>Eliminar Artista</a>
-  </div>
-  </div>
-  </div>
-</div>
-  <div class="card" style="width: 18rem;">
- 
-  
-</div>
+<mat-form-field>
+  <mat-label>Filtro</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+</mat-form-field>
+<div class="mat-elevation-z8">
+<table mat-table  [dataSource]="dataSource" matSort >
 
-</form>
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+
+      <td mat-cell *matCellDef="let element"> 
+        {{element.nombre}} 
+      
+      </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="nombreArtistico">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre artistico </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombreArtistico}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="genero">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Genero </th>
+      <td mat-cell *matCellDef="let element"> {{element.genero}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nacionalidad">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nacionalidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.nacionalidad}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="imagen">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+      <td mat-cell *matCellDef="let element"> {{element.imagen}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="fNacimiento">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header><p><span class="glyphicon glyphicon-user"></span> Fecha de Nacimiento</p> </th>
+      <td mat-cell *matCellDef="let element"> 
+          <span>{{element.fNacimiento | date:'yyyy-MM-dd '}}</span>
+      </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Eliminar">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><p><span class="glyphicon glyphicon-user"></span> Editar</p> </th>
+    <td mat-cell *matCellDef="let element">
+
+     
+      <button mat-stroked-button (click)="eliminar(element.id)">Eliminar</button>
+
+      
+    </td>
+</ng-container>
+
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
