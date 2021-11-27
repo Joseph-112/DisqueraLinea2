@@ -12,7 +12,9 @@ import { CatalogoComponent } from './shared/widgets/catalogo/catalogo.component'
 
 
 const routes: Routes = [{
-
+  path: 'log',
+    component: LoginComponent
+  },{
   path: '',
   component: DefaultComponent,
   children: [{
@@ -31,7 +33,10 @@ const routes: Routes = [{
     path: 'catalogo',
     component: CatalogoComponent
   }
-  ]
+  
+
+
+]
 
 }
 

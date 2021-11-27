@@ -1,13 +1,21 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
 <mat-form-field>
-  <mat-label>Filtro</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
-</mat-form-field>
+  <mat-label>Filtro De Busqueda Para Eliminar</mat-label>
+  
+   
+   <input matInput  (keyup)="applyFilter($event)"
+   placeholder="Buscar       &#xF002;" style= "font-family: Arial, 'Font Awesome 5 Free'"
+    #input
+    type="search"
+    >
+  </mat-form-field>
+
 <div class="mat-elevation-z8">
 <table mat-table  [dataSource]="dataSource" matSort >
 
     <!-- Position Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>No. </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
   

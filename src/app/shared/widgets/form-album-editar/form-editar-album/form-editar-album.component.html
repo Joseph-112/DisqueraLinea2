@@ -1,0 +1,109 @@
+<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Editar datos del Album</h2>
+
+<mat-dialog-content class="mat-h3 or .mat-subheading-2">  
+
+        
+
+        <form  >
+            <mat-form-field mat-form-field appearance="fill">
+                <mat-label><mat-icon>perm_identity</mat-icon>Nombre Artista</mat-label>
+                <input matInput id="nombre_artista" disabled value={{nomArtista.nombreArtistico}}>
+             </mat-form-field>   
+        <mat-form-field >
+            
+            <mat-select  (selectionChange)=changeRatio($event) placeholder="Artistas">
+                <mat-option *ngFor="let artista of artistas" [value]="artista.id">
+                    {{ artista.nombre }}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
+            <input matInput id="nombre" value={{album.nombre}}
+            type="text"
+            required="required"
+            placeholder="nombre"
+            minlength ="4"
+            maxlength ="9">
+         </mat-form-field>   
+        <mat-divider></mat-divider>
+        <br>
+        <mat-form-field appearance="fill">
+        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Descripción</mat-label>
+        <input matInput id="descripcion" value={{album.descripcion}}
+            type="text"
+            required="required"
+            placeholder="Descripcion"
+            minlength ="8"
+            maxlength ="30"
+        
+        >
+        </mat-form-field>  
+        <br>
+        <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Duración(Segundos) </mat-label>
+        <input matInput id="duracion" value={{album.duracion}}
+        type="number"
+            required="required"
+            placeholder="Duracion en Minutos"
+            min ="1"
+            max ="12"
+        
+        >
+        </mat-form-field>  
+        <mat-divider></mat-divider>
+        <br>
+         <mat-form-field appearance="fill">
+        <mat-label>Fecha de Lanzamiento</mat-label>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" id="fLanzamiento" required
+        (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)" value={{album.fLanzamiento}}>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+         </mat-form-field> 
+          <mat-divider></mat-divider>
+        <br> 
+        <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Precio</mat-label>
+        <input matInput id="precio" value={{album.precio}}
+        type="number"
+            required="required"
+            placeholder="Duracion en Minutos"
+            min ="2000"
+            max ="999999"
+            maxlength="6"
+        
+        
+        
+        >
+          </mat-form-field> 
+         <mat-divider></mat-divider>
+        <br>
+         <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Número de Ventas </mat-label>
+        <input matInput id="numVentas" value={{album.numVentas}}
+        type="number"
+            required="required"
+            placeholder="Ventas"
+            min ="0"
+            max ="999999"
+            maxlength="6"
+        
+        
+        
+        >
+          </mat-form-field> 
+          <mat-divider></mat-divider>
+        <br> 
+    <mat-divider></mat-divider>
+ 
+ 
+
+
+
+    <button  mat-button  color="#FFFFFF" class="hover-class"[mat-dialog-close]="true" ><mat-icon>cancel</mat-icon> Cancelar</button>
+    <button mat-button color="btn-btn-primary" class="hover-class1" type="submit"  (click)="editarAlbum()" ><mat-icon>check_circle</mat-icon> Aceptar</button>
+
+    </form>
+</mat-dialog-content>

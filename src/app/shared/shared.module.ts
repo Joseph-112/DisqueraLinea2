@@ -43,6 +43,12 @@ import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-c
 import { CardAlbumComponent } from './widgets/card-album/card-album.component';
 import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
 
+import { FormAlbumDetalleComponent } from './widgets/form-artista-consultar/form-album-detalle/form-album-detalle.component';
+import { FormCancionDetalleComponent } from './widgets/form-artista-consultar/form-cancion-detalle/form-cancion-detalle.component';
+import { FormEditarArtistaComponent } from './widgets/form-artista-editar/form-editar-artista/form-editar-artista.component';
+import { FormAlbumVerArtistaComponent } from './widgets/form-album-consultar/form-album-ver-artista/form-album-ver-artista.component';
+import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/form-album-ver-canciones/form-album-ver-canciones.component';
+import { FormEditarAlbumComponent } from './widgets/form-album-editar/form-editar-album/form-editar-album.component';
 
 @NgModule({
   declarations: [
@@ -73,8 +79,17 @@ import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
     FormCancionEditarComponent,
 
 
-    CatalogoComponent
+    CatalogoComponent,
 
+    FormAlbumDetalleComponent,
+    FormCancionDetalleComponent,
+    FormEditarArtistaComponent,
+    FormAlbumVerArtistaComponent,
+    FormAlbumVerCancionesComponent,
+    FormEditarAlbumComponent,
+    
+    
+    
   ],
   imports: [
 

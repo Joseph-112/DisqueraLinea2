@@ -13,6 +13,9 @@ import { ArtistaService } from 'src/app/_service/artista.service';
 
 })
 export class FormArtistaComponent implements OnInit {
+  startDate = new Date(2014, 0, 1);
+  minDate = new Date(1980, 0, 1);
+  maxDate = new Date(2016, 11, 31);
 
   genero!: String;
   artista = new Artista();
@@ -23,10 +26,8 @@ export class FormArtistaComponent implements OnInit {
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+
   }
-
-
-
 
   generos: Genero[] = [
     { value: 'rock', viewValue: 'Rock' },
@@ -34,33 +35,34 @@ export class FormArtistaComponent implements OnInit {
     { value: 'pop', viewValue: 'Pop' },
   ];
 
-  guardarArtista() {
-    let nombre = ((document.getElementById("nombre") as HTMLInputElement).value);
-    let nomArtistico = ((document.getElementById("nomArtistico") as HTMLInputElement).value);
-    let nacionalidad = ((document.getElementById("nacionalidad") as HTMLInputElement).value);
-    this.artista.nombre = nombre;
-    this.artista.nombreArtistico = nomArtistico;
-    this.artista.genero = this.genero;
-    this.artista.imagen = "/jose.jpg";
-    this.artista.nacionalidad = nacionalidad;
-    this.artista.fNacimiento = "2000-06-07";
-
-    console.log(this.artista);
-    this.artistaService.guardar(this.artista).subscribe(data => {
+  guardarArtista(){
+    let nombre= ((document.getElementById("nombre") as HTMLInputElement).value);
+      let nomArtistico= ((document.getElementById("nomArtistico") as HTMLInputElement).value);
+      let nacionalidad= ((document.getElementById("nacionalidad") as HTMLInputElement).value);
+      this.artista.nombre = nombre;
+      this.artista.nombreArtistico = nomArtistico;
+      this.artista.genero = this.genero;
+      this.artista.imagen = "/jose.jpg";
+      this.artista.nacionalidad = nacionalidad;
+      
+     this.artistaService.guardar(this.artista).subscribe(data =>{
       console.log(this.artista);
-      console.log(data);
-      this.openSnackBar('Artista registrado satisfactoriamente', 'Info');
+      this.openSnackBar('Artista registrado satisfactoriamente','Info');
     })
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    this.artista.nombre = "Ivan";
-    console.log(this.artista);
+    let str = event.value?.toLocaleDateString();    
+    let splitted = str?.split("/", 3); 
+    let fecha = splitted![2]+"-"+splitted![1]+"-"+splitted![0];
+    this.artista.fNacimiento = (fecha);
   }
 
   changeRatio(event: MatSelectChange) {
+    console.log(event.value);
     this.genero = event.value;
   }
+
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
       duration: 3000
@@ -68,10 +70,9 @@ export class FormArtistaComponent implements OnInit {
   }
 }
 
-
-
-
 interface Genero {
   value: string;
   viewValue: string;
 }
+
+

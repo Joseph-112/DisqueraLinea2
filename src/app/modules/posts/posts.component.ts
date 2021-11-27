@@ -37,5 +37,6 @@ export class PostsComponent implements OnInit {
     const dialogRef= this.dialog.open(FormArtistaEditarComponent)
 
   }
+  
 
 }
