@@ -1,13 +1,13 @@
 import { Component, OnInit, enableProdMode, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { HeaderComponent } from 'src/app/shared/components/header/header.component';
-import { FormCancionEditarComponent } from 'src/app/shared/widgets/form-cancion-editar/form-cancion-editar.component';
-import { DefaultComponent } from './../../administrador/default/default.component';
-import { FormAlbumComponent } from 'src/app/shared/widgets/form-album/form-album.component';
-import { AdministradorComponent } from './../../administrador/administrador.component';
-import { CancionOpComponent } from './../../modules/posts/cancion-op/cancion-op.component';
-import { AlbumOpComponent } from './../../modules/posts/album-op/album-op.component';
 import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/_service/usuario.service';
+import { Login } from 'src/app/_model/Login';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Token } from 'src/app/_model/Token';
+import { environment } from 'src/environments/environment';
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { Usuario } from 'src/app/_model/Usuario';
 
 
 @Component({
@@ -17,26 +17,47 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   sideBarOpen = false;
+  login = new Login();
+  usuario = new Usuario();
+  rol! : number;
+  constructor(private router: Router,
+    public usuarioService: UsuarioService,
+    private snackBar: MatSnackBar) {
 
-  constructor(public dialog: MatDialog, private router: Router) {
-    
-   }
-   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
+  }
+  @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
-    
-  }
-  
-  openDialogEditarcancion(){
-    this.router.navigateByUrl('/posts');
+
   }
 
-  sideBarToggler(){
-    this.sideBarOpen= !this.sideBarOpen;
+  openLogin(email: String, password: String) {
+    this.login.email = email;
+    this.login.password = password;
+    this.usuarioService.loginToken(this.login).subscribe(data => {
+      sessionStorage.setItem(environment.TOKEN, data.token.toString());
+      const helper = new JwtHelperService();
+      const decodedToken = helper.decodeToken(data.token.toString());
+     this.usuario = data;
+     if(this.usuario.rol.id == 1) {
+      this.router.navigateByUrl('/posts');
+      }else if(this.usuario.rol.id == 2) {
+        //cliente
+        this.router.navigateByUrl('/');
+        }
+    },err => {
+    this.openSnackBar('Usuario y/o cotrasena inconrrecta', 'Advertrencia')
+    });
+
+
+  }
+
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
   toggleSideBar() {
     this.toggleSideBarForMe.emit();
-    setTimeout(()=>{
+    setTimeout(() => {
       window.dispatchEvent(
         new Event('resize')
       );
@@ -45,10 +66,14 @@ export class LoginComponent implements OnInit {
 
 
 
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000
+    });
+  }
 
 
-  
 }
-  
- 
+
+
 

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Login } from '../_model/Login';
 import { Token } from 'src/app/_model/Token';
+import { Usuario } from '../_model/Usuario';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +17,7 @@ export class UsuarioService {
 
 
   loginToken(login:Login ){
-    return this.http.post<Token>(this.url+'/Disco/api/auth/token',login);
+    return this.http.post<Usuario>(this.url+'/Disco/api/auth/login',login);
   }
 
   actualizarToken(id : number){
