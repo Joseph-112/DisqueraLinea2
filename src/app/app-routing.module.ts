@@ -16,7 +16,7 @@ const routes: Routes = [{
     component: LoginComponent
   },{
   path: '',
-  component: DefaultComponent,
+  component: LoginComponent,
   children: [{
     path: '',
     component: DashboardComponent
