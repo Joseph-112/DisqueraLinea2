@@ -1,0 +1,28 @@
+<mat-list>
+    <div mat-subheader>Canciones</div>
+  <mat-list-item *ngFor="let cancion of canciones">
+    <mat-icon mat-list-icon>album</mat-icon>
+    <div mat-line>{{cancion.nombreCancion}}</div>
+    <div mat-line>Artista: {{cancion.nombreArtistico}}</div>
+    <div mat-line>Género: {{cancion.genero}}</div> 
+    <div mat-line>Fecha de lanzamiento: {{cancion.fLanzamiento | date:'yyyy-MM-dd '}} </div>
+    <div mat-line>Precio: ${{cancion.precio}} </div>
+
+    <button mat-button (click)="comprar(cancion)">Comprar</button>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+
+<br>
+<br>
+<mat-divider></mat-divider>
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <!--<mat-card-title *ngFor="let "></mat-card-title>-->
+    <mat-card-subtitle>Small</mat-card-subtitle>
+    <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+  </mat-card-title-group>
+  <mat-card-content>
+    hola
+  </mat-card-content>
+</mat-card>

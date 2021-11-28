@@ -14,7 +14,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatSortModule} from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -37,27 +40,37 @@ import { FormCancionComponent } from './widgets/form-cancion/form-cancion.compon
 import { FormCancionEliminarComponent } from './widgets/form-cancion-eliminar/form-cancion-eliminar.component';
 import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/form-cancion-consultar.component';
 import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { CardAlbumComponent } from './widgets/card-album/card-album.component';
+import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
+
 import { FormAlbumDetalleComponent } from './widgets/form-artista-consultar/form-album-detalle/form-album-detalle.component';
 import { FormCancionDetalleComponent } from './widgets/form-artista-consultar/form-cancion-detalle/form-cancion-detalle.component';
 import { FormEditarArtistaComponent } from './widgets/form-artista-editar/form-editar-artista/form-editar-artista.component';
 import { FormAlbumVerArtistaComponent } from './widgets/form-album-consultar/form-album-ver-artista/form-album-ver-artista.component';
 import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/form-album-ver-canciones/form-album-ver-canciones.component';
+import { FormEditarAlbumComponent } from './widgets/form-album-editar/form-editar-album/form-editar-album.component';
+import { FormCancionVerArtistaComponent } from './widgets/form-cancion-consultar/form-cancion-ver-artista/form-cancion-ver-artista.component';
+import { FormCancionVerAlbumComponent } from './widgets/form-cancion-consultar/form-cancion-ver-album/form-cancion-ver-album.component';
+import { FormEditarCancionComponent } from './widgets/form-cancion-editar/form-editar-cancion/form-editar-cancion.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+
     BoxComponent,
     CardComponent,
+    CardAlbumComponent,
+
     CalendarioComponent,
+
     FormArtistaComponent,
     FormAlbumComponent,
     FormAlbumEliminarComponent,
     FormAlbumConsultarComponent,
     FormAlbumEditarComponent,
+
     FormArtistaEliminarComponent,
     CancionOpComponent,
     FormArtistaConsultarComponent,
@@ -67,20 +80,28 @@ import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/f
     FormCancionEliminarComponent,
     FormCancionConsultarComponent,
     FormCancionEditarComponent,
+
+
+    CatalogoComponent,
+
     FormAlbumDetalleComponent,
     FormCancionDetalleComponent,
     FormEditarArtistaComponent,
     FormAlbumVerArtistaComponent,
     FormAlbumVerCancionesComponent,
+    FormEditarAlbumComponent,
+    FormCancionVerArtistaComponent,
+    FormCancionVerAlbumComponent,
+    FormEditarCancionComponent,
     
     
     
   ],
   imports: [
-  
 
 
-  CommonModule,
+
+    CommonModule,
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,
@@ -98,7 +119,8 @@ import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/f
     MatSelectModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule
   ],
   exports: [
     HeaderComponent,
@@ -106,7 +128,9 @@ import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/f
     SidebarComponent,
     BoxComponent,
     CardComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    CardAlbumComponent,
+    CatalogoComponent
   ]
 })
 export class SharedModule { }

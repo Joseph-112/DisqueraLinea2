@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AlbumDto } from 'src/app/_model/AlbumDto';
@@ -10,17 +11,19 @@ import { ArtistaService } from 'src/app/_service/artista.service';
 import { CancionService } from 'src/app/_service/cancion.service';
 
 @Component({
-  selector: 'app-form-cancion',
-  templateUrl: './form-cancion.component.html',
-  styleUrls: ['./form-cancion.component.css']
+  selector: 'app-form-editar-cancion',
+  templateUrl: './form-editar-cancion.component.html',
+  styleUrls: ['./form-editar-cancion.component.css']
 })
-export class FormCancionComponent implements OnInit {
+export class FormEditarCancionComponent implements OnInit {
 
-
+  
 
   public artistas = new Array<Artista>();
   public albums = new Array<AlbumDto>();
-  private cancion = new CancionDto();
+  public nomArtista = new Artista();
+  public nomAlbum = new AlbumDto();
+  public cancion = new CancionDto();
   count! : boolean;
   startDate = new Date(2021, 0, 1);
   minDate = new Date(2000, 0, 1);
@@ -28,19 +31,30 @@ export class FormCancionComponent implements OnInit {
   constructor(private artistaService : ArtistaService,
     private albumService : AlbumService,
     private cancionService : CancionService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
     this.refrescar();
   }
 
   refrescar(){
+    this.cancionService.listarPorId(this.data.idCancionEditar).subscribe(data =>{
+      this.cancion = data;
+      this.artistaService.listarPorId(this.cancion.idArtista).subscribe(data=>{
+        this.nomArtista = data;
+      });
+      this.albumService.listarPorId(this.cancion.idAlbum).subscribe(data=>{
+        this.nomAlbum = data;
+      });
+    });
     this.artistaService.listarTodos().subscribe(data=>{
       this.artistas = data;
+      
     });
   }
 
-  guardarCancion(){
+  editarCancion(){
     this.cancion.nombre = ((document.getElementById("nombre") as HTMLInputElement).value);
     this.cancion.descripcion= ((document.getElementById("descripcion") as HTMLInputElement).value);
     this.cancion.duracion = ((document.getElementById("duracion") as HTMLInputElement).valueAsNumber);
@@ -48,8 +62,8 @@ export class FormCancionComponent implements OnInit {
     this.cancion.precio = ((document.getElementById("precio") as HTMLInputElement).valueAsNumber);
     this.cancion.numVentas = ((document.getElementById("numVentas") as HTMLInputElement).valueAsNumber);
     this.cancion.imagen = "/.jpg";
-    this.cancionService.guardar(this.cancion).subscribe(data =>{
-      this.openSnackBar('Cancion guardada satisfactoriamente','Info');
+    this.cancionService.editar(this.cancion).subscribe(data =>{
+      this.openSnackBar('Cancion editada satisfactoriamente','Info');
     })
   }
 

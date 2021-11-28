@@ -5,7 +5,7 @@
     <form class="custom-form" method="post" >
             <mat-form-field appearance="fill">
                 <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
-                <input matInput id="nombre"
+                <input matInput id="nombre"  value={{cancion.nombre}}
                 type="text"
                 required="required"
                 placeholder="nombre"
@@ -18,7 +18,7 @@
         <br>
         <mat-form-field appearance="fill">
             <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Descripcion</mat-label>
-            <input matInput id="descripcion"
+            <input matInput id="descripcion" value={{cancion.descripcion}}
             type="text"
                 required="required"
                 placeholder="Descripcion"
@@ -30,7 +30,7 @@
 
         <mat-form-field appearance="fill">
             <mat-label><mat-icon>list</mat-icon> Duración(Segundos) </mat-label>
-            <input matInput id="duracion"
+            <input matInput id="duracion" value={{cancion.duracion}}
             type="number"
                 required="required"
                 placeholder="Duracion Segundos"
@@ -42,7 +42,7 @@
             <mat-divider></mat-divider>
             <mat-form-field appearance="fill">
                 <mat-label><mat-icon>perm_identity</mat-icon>   Nacionalidad</mat-label>
-                <input matInput id="nacionalidad"
+                <input matInput id="nacionalidad" value={{cancion.nacionalidad}}
                 type="text"
                 required="required"
                 placeholder="nacionalidad"
@@ -50,9 +50,10 @@
                 maxlength ="9"
                 >
             </mat-form-field>
+            <mat-divider></mat-divider>
             <mat-form-field appearance="fill">
                 <mat-label><mat-icon>list</mat-icon> Precio</mat-label>
-                <input matInput id="precio"
+                <input matInput id="precio" value={{cancion.precio}}
                 type="number"
                     required="required"
                     placeholder="Precio"
@@ -69,7 +70,7 @@
         <br>
         <mat-form-field appearance="fill">
             <mat-label><mat-icon>list</mat-icon> Número de Ventas </mat-label>
-            <input matInput id="numVentas"
+            <input matInput id="numVentas" value={{cancion.numVentas}}
             type="number"
                 required="required"
                 placeholder="Ventas"
@@ -88,7 +89,8 @@
         <mat-form-field appearance="fill">
             <mat-label>Fecha de lanzamiento</mat-label>
             <input  matInput   [min]="minDate" [max]="maxDate"[matDatepicker]="picker" required id="flanzamiento"  placeholder="dd/mm/aaaa"
-            (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+            (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"
+            value={{cancion.fLanzamiento}}>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
              <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
             <mat-divider></mat-divider>
@@ -97,7 +99,10 @@
          
           <mat-divider></mat-divider>
         <br> 
-
+        <mat-form-field mat-form-field appearance="fill">
+            <mat-label><mat-icon>perm_identity</mat-icon>Nombre Artista</mat-label>
+            <input matInput id="nombre_artista" disabled value={{nomArtista.nombreArtistico}}>
+         </mat-form-field>   
         <mat-form-field  appearance="fill">
             <mat-select  (selectionChange)=changeRatioArtista($event) placeholder="Artista">
                 <mat-option *ngFor="let artista of artistas" [value]="artista.id">
@@ -105,7 +110,11 @@
                 </mat-option>
             </mat-select>
           </mat-form-field>
-
+          <mat-divider></mat-divider>
+          <mat-form-field mat-form-field appearance="fill">
+            <mat-label><mat-icon>perm_identity</mat-icon>Nombre Album</mat-label>
+            <input matInput id="nombre_artista" disabled value={{nomAlbum.nombre}}>
+         </mat-form-field>   
           <mat-form-field  appearance="fill">
             <mat-select  (selectionChange)=changeRatioAlbum($event) placeholder="Album" [disabled]="count">
                 <mat-option *ngFor="let album of albums" [value]="album.id" >
@@ -120,7 +129,7 @@
          <button  mat-button  color="#FFFFFF" class="hover-class"[mat-dialog-close]="true" ><mat-icon>cancel</mat-icon> Cancelar</button>
     
         
-        <button mat-button color="btn-btn-primary" class="hover-class1" type="submit" (click)="guardarCancion()"  ><mat-icon>check_circle</mat-icon> Aceptar</button>
+        <button mat-button color="btn-btn-primary" class="hover-class1" type="submit" (click)="editarCancion()"  ><mat-icon>check_circle</mat-icon> Aceptar</button>
     
     </form>
     </mat-dialog-content>

@@ -1,0 +1,41 @@
+<h2 mat-dialog-title><mat-icon>music_video</mat-icon>Datos del Album</h2>
+<mat-dialog-content class="mat-h3 or .mat-subheading-2">
+  
+   
+        <mat-form-field appearance="fill">
+            <mat-label><mat-icon>perm_identity</mat-icon>      Nombre</mat-label>
+            <input matInput id="nombre" disabled value={{album.nombre}}>
+        </mat-form-field>
+ 
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>perm_contact_calendar</mat-icon>      Descripcion</mat-label>
+        <input matInput id="descripcion" disabled value={{album.descripcion}}>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>perm_contact_calendar</mat-icon>     Duracion</mat-label>
+        <input matInput id="duracion" disabled value={{album.duracion}}>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Precio</mat-label>
+        <input matInput id="precio" disabled value={{album.precio}}>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Fecha de Lanzamiento</mat-label>
+        <input matInput id="fnacimiento" disabled value={{album.fLanzamiento}}>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label><mat-icon>list</mat-icon> Numero de ventas</mat-label>
+        <input matInput id="fnacimiento" disabled value={{album.numVentas}}>
+    </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+</mat-dialog-actions>
