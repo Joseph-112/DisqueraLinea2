@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DefaultComponent } from './default/default.component';
 
 @Component({
@@ -8,13 +9,14 @@ import { DefaultComponent } from './default/default.component';
   styleUrls: ['./administrador.component.css']
 })
 export class AdministradorComponent implements OnInit {
-
-  constructor(public dialog: MatDialog) { }
+  
+  constructor(public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
   }
   openDialogDefault(){
-    const dialogRef = this.dialog.open(DefaultComponent);
+    this.router.navigateByUrl('/');
   }
+  
 
 }
