@@ -5,6 +5,8 @@ import { FormCancionEditarComponent } from 'src/app/shared/widgets/form-cancion-
 import { DefaultComponent } from './../../administrador/default/default.component';
 import { FormAlbumComponent } from 'src/app/shared/widgets/form-album/form-album.component';
 import { AdministradorComponent } from './../../administrador/administrador.component';
+import { CancionOpComponent } from './../../modules/posts/cancion-op/cancion-op.component';
+
 
 @Component({
   selector: 'app-login',
@@ -23,9 +25,7 @@ export class LoginComponent implements OnInit {
     
   }
   
-  openDialogEditarcancion(){
-    const dialogRef = this.dialog.open(AdministradorComponent);
-  }
+  
 
   sideBarToggler(){
     this.sideBarOpen= !this.sideBarOpen;
