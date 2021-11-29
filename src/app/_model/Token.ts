@@ -1,3 +1,3 @@
 export class Token{
-   token!:String;
+   token!:any;
  }

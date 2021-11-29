@@ -8,6 +8,7 @@ import { Token } from 'src/app/_model/Token';
 import { environment } from 'src/environments/environment';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Usuario } from 'src/app/_model/Usuario';
+import { Rol } from 'src/app/_model/Rol';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   sideBarOpen = false;
   login = new Login();
   usuario = new Usuario();
-  rol! : number;
+  rol = new Rol();
   constructor(private router: Router,
     public usuarioService: UsuarioService,
     private snackBar: MatSnackBar) {
@@ -35,16 +36,31 @@ export class LoginComponent implements OnInit {
     this.login.email = email;
     this.login.password = password;
     this.usuarioService.loginToken(this.login).subscribe(data => {
-      sessionStorage.setItem(environment.TOKEN, data.token.toString());
+      console.log(data);
+      sessionStorage.setItem(environment.TOKEN, data.token);
       const helper = new JwtHelperService();
-      const decodedToken = helper.decodeToken(data.token.toString());
-     this.usuario = data;
-     if(this.usuario.rol.id == 1) {
-      this.router.navigateByUrl('/posts');
-      }else if(this.usuario.rol.id == 2) {
-        //cliente
-        this.router.navigateByUrl('/');
-        }
+      
+      // cifrar variables
+      sessionStorage.setItem("email", btoa(email.toString()));
+      sessionStorage.setItem("password", btoa(password.toString()));
+
+
+      const decodedToken = helper.decodeToken(data.token);
+      console.log(decodedToken.sub);
+      this.usuarioService.consultarRol(decodedToken.sub).subscribe(data2 => {
+        console.log(data2);
+        this.rol =data2;
+        if(this.rol.id == 1) {
+          //admin
+        
+         this.router.navigateByUrl('/posts');
+   
+         }else if(this.rol.id  == 2) {
+           //cliente
+           this.router.navigateByUrl('/');
+           }
+      })
+     
     },err => {
     this.openSnackBar('Usuario y/o cotrasena inconrrecta', 'Advertrencia')
     });
