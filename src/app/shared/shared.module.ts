@@ -8,7 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu'; 
+import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -18,7 +18,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatBadgeModule } from '@angular/material/badge';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -43,6 +42,7 @@ import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/
 import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
 import { CardAlbumComponent } from './widgets/card-album/card-album.component';
 import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
+import { CarritoComponent } from './widgets/catalogo/carrito/carrito.component';
 
 import { FormAlbumDetalleComponent } from './widgets/form-artista-consultar/form-album-detalle/form-album-detalle.component';
 import { FormCancionDetalleComponent } from './widgets/form-artista-consultar/form-cancion-detalle/form-cancion-detalle.component';
@@ -50,7 +50,6 @@ import { FormEditarArtistaComponent } from './widgets/form-artista-editar/form-e
 import { FormAlbumVerArtistaComponent } from './widgets/form-album-consultar/form-album-ver-artista/form-album-ver-artista.component';
 import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/form-album-ver-canciones/form-album-ver-canciones.component';
 import { FormEditarAlbumComponent } from './widgets/form-album-editar/form-editar-album/form-editar-album.component';
-import { CarritoComponent } from './widgets/catalogo/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -117,8 +116,7 @@ import { CarritoComponent } from './widgets/catalogo/carrito/carrito.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatCardModule,
-    MatBadgeModule
+    MatCardModule
   ],
   exports: [
     HeaderComponent,
@@ -127,7 +125,7 @@ import { CarritoComponent } from './widgets/catalogo/carrito/carrito.component';
     BoxComponent,
     CardComponent,
     CalendarioComponent,
-    CardAlbumComponent, 
+    CardAlbumComponent,
     CatalogoComponent,
     CarritoComponent
   ]
