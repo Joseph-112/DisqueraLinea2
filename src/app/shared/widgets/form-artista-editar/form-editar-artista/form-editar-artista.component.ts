@@ -1,10 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSelectChange } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Artista } from 'src/app/_model/Artista';
 import { ArtistaService } from 'src/app/_service/artista.service';
+import { FormArtistaEditarComponent } from '../form-artista-editar.component';
 
 @Component({
   selector: 'app-form-editar-artista',
@@ -16,15 +17,18 @@ export class FormEditarArtistaComponent implements OnInit {
   artista = new Artista();
   artistaEdit = new Artista();
   checkDate!: Date;
+  maxDate = new Date(2006, 11, 30);
+
   constructor(private artistaService : ArtistaService,
     private _snackBar: MatSnackBar,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any,public dialog: MatDialog) { }
 
   ngOnInit(): void {
    
     this.refrescar();
   }
 
+ 
   generos: Genero[] = [
     {value: 'rock', viewValue: 'Rock'},
     {value: 'metal', viewValue: 'Metal'},
@@ -54,6 +58,7 @@ export class FormEditarArtistaComponent implements OnInit {
      this.artistaService.editar(this.artistaEdit).subscribe(data =>{
       console.log(this.artista);
       this.openSnackBar('Artista editado satisfactoriamente','Info');
+      this.dialog.open(FormArtistaEditarComponent);
     })
   }
 
@@ -72,6 +77,7 @@ export class FormEditarArtistaComponent implements OnInit {
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
         duration: 3000
+        
     });
   }
 }

@@ -5,7 +5,7 @@
    
   
 
-        <form class="custom-form" method="post" >
+        <form class="custom-form" >
         
             <mat-form-field  appearance="fill">
                 <mat-select  (selectionChange)=changeRatio($event) placeholder="Artista">
@@ -21,8 +21,8 @@
             type="text"
             required="required"
             placeholder="nombre"
-            minlength ="4"
-            maxlength ="9">
+            minlength ="3"
+            maxlength ="14">
          </mat-form-field>   
         <mat-divider></mat-divider>
         <br>
@@ -33,7 +33,7 @@
             required="required"
             placeholder="Descripcion"
             minlength ="8"
-            maxlength ="30"
+            maxlength ="20"
         
         >
         </mat-form-field>  
@@ -45,29 +45,29 @@
             required="required"
             placeholder="Duracion Segundos"
             min ="60"
-            max ="360"
+            max ="1000"
         
         >
         </mat-form-field>  
         <mat-divider></mat-divider>
         <br>
-         <mat-form-field appearance="fill">
-        <mat-label>Fecha de Lanzamiento</mat-label>
-        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" id="fLanzamiento" required
-        (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-         <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
-         </mat-form-field> 
-          <mat-divider></mat-divider>
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha de lanzamiento</mat-label>
+            <input  matInput [min]="minDate" [matDatepicker]="picker" id="fLanzamiento" 
+            (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)
+            " >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+            <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
+        </mat-form-field>
         <br> 
         <mat-form-field appearance="fill">
         <mat-label><mat-icon>list</mat-icon> Precio</mat-label>
         <input matInput id="precio"
         type="number"
             required="required"
-            placeholder="Duracion en Minutos"
+            placeholder="Precio"
             min ="2000"
             max ="999999"
             maxlength="6"

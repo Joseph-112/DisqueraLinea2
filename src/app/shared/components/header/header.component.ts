@@ -1,4 +1,6 @@
 import { Component, OnInit, Output , EventEmitter} from '@angular/core';
+import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/_service/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,8 @@ export class HeaderComponent implements OnInit {
 
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor(private usuarioService:UsuarioService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +24,10 @@ export class HeaderComponent implements OnInit {
         new Event('resize')
       );
     }, 300);
+  }
+  cerrarSession(){
+    this.usuarioService.cerrarSession().subscribe(data =>{
+      this.router.navigateByUrl('/log');
+    });
   }
 }

@@ -32,7 +32,12 @@ export class UsuarioService {
     let token = sessionStorage.getItem(environment.TOKEN);
     const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken(token!);
-
+    sessionStorage.setItem("email",null!);
+    sessionStorage.removeItem("email");
+    sessionStorage.setItem("password",null!);
+    sessionStorage.removeItem("password");
+    sessionStorage.setItem(environment.TOKEN,null!);
+    sessionStorage.removeItem(environment.TOKEN);
     return this.http.put(this.url+'/Disco/api/auth/cerrarSession/'+decodedToken.sub,"");
   }
   estaLogeado(): number{

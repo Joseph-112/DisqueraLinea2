@@ -9,9 +9,7 @@
             <ul fxLayout="row" fxLayout="20px">
                 
                 
-                    <button mat-icon-button> Ayuda<mat-icon>help_outline</mat-icon>
-                       
-                    </button>
+                    
                 
                 <!--<li>
                     <button mat-button>Cerrar sesión</button>
@@ -21,9 +19,10 @@
                       <mat-icon>person_outline</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>
-                            <mat-icon>exit_to_app</mat-icon>
+                        <button mat-menu-item (click)="cerrarSession()">
+                            <mat-icon >exit_to_app</mat-icon>
                             Cerrar sesión
+                            
                         </button>
                     </mat-menu>
                 </li>

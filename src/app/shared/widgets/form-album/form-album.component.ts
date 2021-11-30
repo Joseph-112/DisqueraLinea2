@@ -16,9 +16,9 @@ export class FormAlbumComponent implements OnInit {
 
   public artistas = new Array<Artista>();
   private album = new AlbumDto();
-  startDate = new Date(2021, 0, 1);
+  
   minDate = new Date(2000, 0, 1);
-  maxDate = new Date(2021, 11, 1);
+  
   constructor(private artistaService : ArtistaService,
     private albumService : AlbumService,
     private _snackBar: MatSnackBar) { }
@@ -50,7 +50,7 @@ export class FormAlbumComponent implements OnInit {
     let str = event.value?.toLocaleDateString();    
     let splitted = str?.split("/", 3); 
     let fecha = splitted![2]+"-"+splitted![1]+"-"+splitted![0];
-    this.album.fLanzamiento = (fecha);
+    this.album.fLanzamiento = (fecha).toString();
   }
 
   openSnackBar(message: string, action: string) {

@@ -16,15 +16,13 @@ import { CancionService } from 'src/app/_service/cancion.service';
 })
 export class FormCancionComponent implements OnInit {
 
-
-
+  minDate = new Date(2000, 11, 30);
+  maxDate = new Date(2026, 11, 30);
   public artistas = new Array<Artista>();
   public albums = new Array<AlbumDto>();
   private cancion = new CancionDto();
   count! : boolean;
-  startDate = new Date(2021, 0, 1);
-  minDate = new Date(2000, 0, 1);
-  maxDate = new Date(2021, 11, 1);
+
   constructor(private artistaService : ArtistaService,
     private albumService : AlbumService,
     private cancionService : CancionService,
@@ -57,7 +55,7 @@ export class FormCancionComponent implements OnInit {
     let str = event.value?.toLocaleDateString();    
     let splitted = str?.split("/", 3); 
     let fecha = splitted![2]+"-"+splitted![1]+"-"+splitted![0];
-    this.cancion.fLanzamiento = (fecha);
+    this.cancion.fLanzamiento = (fecha).toString();
   }
 
   openSnackBar(message: string, action: string) {

@@ -53,15 +53,16 @@
         </mat-form-field>  
         <mat-divider></mat-divider>
         <br>
-         <mat-form-field appearance="fill">
-        <mat-label>Fecha de Lanzamiento</mat-label>
-        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" id="fLanzamiento" required
-        (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)" value={{album.fLanzamiento}}>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-         <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
-         </mat-form-field> 
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha de lanzamiento</mat-label>
+            <input  matInput   [min]="minDate"[matDatepicker]="picker" required id="flanzamiento"  placeholder="dd/mm/aaaa"
+            (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"
+            value={{album.fLanzamiento}}>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+             <mat-datepicker #picker startView="year" ></mat-datepicker>
+            <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
+        </mat-form-field> 
           <mat-divider></mat-divider>
         <br> 
         <mat-form-field appearance="fill">

@@ -44,6 +44,7 @@ export class FormArtistaEliminarComponent implements OnInit {
   eliminar(id : number){
     this.artistaService.eliminar(id).subscribe(data=>{
       this.refrescar();
+      this.openSnackBar("Se elimino el artista correctamente","");
     })
   }
 
