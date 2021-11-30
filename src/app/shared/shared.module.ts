@@ -43,6 +43,7 @@ import { FormCancionConsultarComponent } from './widgets/form-cancion-consultar/
 import { FormCancionEditarComponent } from './widgets/form-cancion-editar/form-cancion-editar.component';
 import { CardAlbumComponent } from './widgets/card-album/card-album.component';
 import { CatalogoComponent } from './widgets/catalogo/catalogo.component';
+import { CarritoComponent } from './widgets/catalogo/carrito/carrito.component';
 
 import { FormAlbumDetalleComponent } from './widgets/form-artista-consultar/form-album-detalle/form-album-detalle.component';
 import { FormCancionDetalleComponent } from './widgets/form-artista-consultar/form-cancion-detalle/form-cancion-detalle.component';
@@ -94,7 +95,7 @@ import { FormEditarCancionComponent } from './widgets/form-cancion-editar/form-e
     FormCancionVerArtistaComponent,
     FormCancionVerAlbumComponent,
     FormEditarCancionComponent,
-    
+    CarritoComponent
     
     
   ],
@@ -131,7 +132,8 @@ import { FormEditarCancionComponent } from './widgets/form-cancion-editar/form-e
     CardComponent,
     CalendarioComponent,
     CardAlbumComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    CarritoComponent
   ]
 })
 export class SharedModule { }

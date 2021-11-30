@@ -1,22 +1,25 @@
-<mat-toolbar >
+<mat-toolbar>
     <mat-toolbar-row>
         <button mat-icon-button (click)="toggleSideBar()">
             <mat-icon>menu</mat-icon>
         </button>
         <!--<span> APP LOGO </span>-->
-       <img src="https://thump-images.vice.com/images/2015/04/23/el-arte-de-los-logos-para-sellos-discograficos-body-image-1429828387.jpg" width="70" height="40" />  DISQUERA 
+        <img src="https://thump-images.vice.com/images/2015/04/23/el-arte-de-los-logos-para-sellos-discograficos-body-image-1429828387.jpg"
+            width="70" height="40" /> DISQUERA
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayout="20px">
+
                 
                 
                     
                 
+
                 <!--<li>
                     <button mat-button>Cerrar sesión</button>
                 </li>-->
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu">
-                      <mat-icon>person_outline</mat-icon>
+                        <mat-icon>person_outline</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
                         <button mat-menu-item (click)="cerrarSession()">

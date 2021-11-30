@@ -15,13 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './administrador/default/default.module';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-import { LoginModule } from './login/login/login.module';
+//import { LoginModule } from './login/login/login.module';
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from 'src/app/_service/usuario.service';
 import { environment } from 'src/environments/environment';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Login } from './_model/Login';
+import { LoginComponent } from './login/login/login.component';
 
 
 export  function jwtOptionsFactory(usuarioService:UsuarioService) {
@@ -84,7 +85,8 @@ const routes: Routes = [];
 @NgModule({
   declarations: [
     AppComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    LoginComponent
   ],
   imports: [
   
@@ -93,7 +95,6 @@ const routes: Routes = [];
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    LoginModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     MatSnackBarModule,
