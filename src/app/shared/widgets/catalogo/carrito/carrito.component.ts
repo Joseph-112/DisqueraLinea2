@@ -14,4 +14,7 @@ export class CarritoComponent implements OnInit {
     console.log(this.data);
   }
 
+  comprar(){
+    
+  }
 }
