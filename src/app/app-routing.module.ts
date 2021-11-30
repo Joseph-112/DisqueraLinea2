@@ -16,19 +16,19 @@ const routes: Routes = [{
   
   
   path: '',
-  component: DefaultComponent ,  canActivate:[ GuardianService],
+  component: DefaultComponent ,
   children: [{
     path: '',
-    component: DashboardComponent ,  canActivate:[ GuardianService]
+    component: DashboardComponent 
   }, {
     path: 'posts',
-    component: PostsComponent, canActivate:[ GuardianService]
+    component: PostsComponent
   }, {
     path: 'cancionOp',
-    component: CancionOpComponent, canActivate:[ GuardianService]
+    component: CancionOpComponent
   }, {
     path: 'albumOp',
-    component: AlbumOpComponent, canActivate:[ GuardianService]
+    component: AlbumOpComponent
   }, {
     path: 'catalogo',component: CatalogoComponent
   }
