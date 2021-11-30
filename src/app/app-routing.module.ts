@@ -10,36 +10,32 @@ import { AlbumOpComponent } from './modules/posts/album-op/album-op.component';
 import { LoginComponent } from './login/login/login.component';
 import { CatalogoComponent } from './shared/widgets/catalogo/catalogo.component';
 import { GuardianService } from './_service/guardian.service';
+import { CarritoComponent } from './shared/widgets/catalogo/carrito/carrito.component';
 
 
 const routes: Routes = [{
-  
-  
+  path: 'log',
+    component: LoginComponent
+  },{
   path: '',
-  component: DefaultComponent ,
+  component: DefaultComponent ,  canActivate:[ GuardianService],
   children: [{
     path: '',
-    component: DashboardComponent 
+    component: DashboardComponent ,  canActivate:[ GuardianService]
   }, {
     path: 'posts',
-    component: PostsComponent
+    component: PostsComponent, canActivate:[ GuardianService]
   }, {
     path: 'cancionOp',
-    component: CancionOpComponent
+    component: CancionOpComponent, canActivate:[ GuardianService]
   }, {
     path: 'albumOp',
-    component: AlbumOpComponent
-  }, {
-    path: 'catalogo',component: CatalogoComponent
+    component: AlbumOpComponent, canActivate:[ GuardianService]
   }
-  ,{path: '**', component: LoginComponent}
-  
-
-
-]
-
-}
-
+]}
+,{path: 'catalogo', component: CatalogoComponent},
+{path: 'carrito', component: CarritoComponent},
+{path: '**', component: LoginComponent}
 
 
 

@@ -61,6 +61,12 @@ export class GuardianService implements CanActivate{
          return true;
          else if(url.includes('/') && decodedToken.permisos[1] == 'Administrador')
          return true;
+
+         //cliente
+         else if(url.includes('/catalogo') && decodedToken.permisos[1] == 'Cliente')
+         return true;
+         else if(url.includes('/carrito') && decodedToken.permisos[1] == 'Cliente')
+         return true;
       else {
         //this.router.navigateByUrl('/401Invalid');
         this.router.navigate(['/401Invalid']);
