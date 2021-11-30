@@ -1,1 +1,6 @@
-<p>login works!</p>
+<input #email type="email" placeholder="Email" required />
+			<input  #password type="password" placeholder="Password" required />
+			
+			<a href="#">Forgot your password?</a>
+
+			<button type="submit" (click)="openLogin(email.value, password.value)"> Inicio </button>

@@ -53,7 +53,7 @@ export class FormArtistaConsultarComponent implements OnInit {
     });
   }
   
-  verAlbunes(albumnes : Album[]){
+  verAlbumes(albumnes : Album[]){
     
    this.detalleAlbumService.setDetalle(albumnes);
    this.detalleAlbumService.setAuteriorUrl("/"); 

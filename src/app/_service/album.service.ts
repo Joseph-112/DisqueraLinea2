@@ -19,6 +19,10 @@ export class AlbumService {
     return this.http.get<AlbumDto[]>(this.url+'/Disco/api/Albums/obtener');
   }
 
+  listarIdArtista(idArtista :number){
+    return this.http.get<AlbumDto[]>(this.url+'/Disco/api/Albums/listarIdArtista/'+idArtista);
+  }
+
   listarPorId(id:number){
     return this.http.get<AlbumDto>(this.url+'/Disco/api/Albums/obtenerPorId/'+id);
   }

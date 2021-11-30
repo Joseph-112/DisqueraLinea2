@@ -7,31 +7,32 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { CancionOpComponent } from './modules/posts/cancion-op/cancion-op.component';
 import { FormAlbumEliminarComponent } from './shared/widgets/form-album-eliminar/form-album-eliminar.component';
 import { AlbumOpComponent } from './modules/posts/album-op/album-op.component';
-//import { LoginComponent } from './login/login/login.component';
+import { LoginComponent } from './login/login/login.component';
 import { CatalogoComponent } from './shared/widgets/catalogo/catalogo.component';
+import { GuardianService } from './_service/guardian.service';
 
 
 const routes: Routes = [{
   
   
   path: '',
-  component: DefaultComponent,
+  component: DefaultComponent ,  canActivate:[ GuardianService],
   children: [{
     path: '',
-    component: DashboardComponent
+    component: DashboardComponent ,  canActivate:[ GuardianService]
   }, {
     path: 'posts',
-    component: PostsComponent
+    component: PostsComponent, canActivate:[ GuardianService]
   }, {
     path: 'cancionOp',
-    component: CancionOpComponent
+    component: CancionOpComponent, canActivate:[ GuardianService]
   }, {
     path: 'albumOp',
-    component: AlbumOpComponent
+    component: AlbumOpComponent, canActivate:[ GuardianService]
   }, {
-    path: 'catalogo',
-    component: CatalogoComponent
+    path: 'catalogo',component: CatalogoComponent
   }
+  ,{path: '**', component: LoginComponent}
   
 
 
