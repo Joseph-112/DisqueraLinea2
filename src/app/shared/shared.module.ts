@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { BoxComponent } from './widgets/caja/box.component';
@@ -50,6 +51,9 @@ import { FormEditarArtistaComponent } from './widgets/form-artista-editar/form-e
 import { FormAlbumVerArtistaComponent } from './widgets/form-album-consultar/form-album-ver-artista/form-album-ver-artista.component';
 import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/form-album-ver-canciones/form-album-ver-canciones.component';
 import { FormEditarAlbumComponent } from './widgets/form-album-editar/form-editar-album/form-editar-album.component';
+//import { FormCancionVerArtistaComponent } from './widgets/form-cancion-consultar/form-cancion-ver-artista/form-cancion-ver-artista.component';
+//import { FormCancionVerAlbumComponent } from './widgets/form-cancion-consultar/form-cancion-ver-album/form-cancion-ver-album.component';
+//import { FormEditarCancionComponent } from './widgets/form-cancion-editar/form-editar-cancion/form-editar-cancion.component';
 
 @NgModule({
   declarations: [
