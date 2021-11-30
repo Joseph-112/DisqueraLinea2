@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -49,6 +50,7 @@ import { FormEditarArtistaComponent } from './widgets/form-artista-editar/form-e
 import { FormAlbumVerArtistaComponent } from './widgets/form-album-consultar/form-album-ver-artista/form-album-ver-artista.component';
 import { FormAlbumVerCancionesComponent } from './widgets/form-album-consultar/form-album-ver-canciones/form-album-ver-canciones.component';
 import { FormEditarAlbumComponent } from './widgets/form-album-editar/form-editar-album/form-editar-album.component';
+import { CarritoComponent } from './widgets/catalogo/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,7 @@ import { FormEditarAlbumComponent } from './widgets/form-album-editar/form-edita
     FormAlbumVerArtistaComponent,
     FormAlbumVerCancionesComponent,
     FormEditarAlbumComponent,
+    CarritoComponent,
     
     
     
@@ -114,7 +117,8 @@ import { FormEditarAlbumComponent } from './widgets/form-album-editar/form-edita
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule
   ],
   exports: [
     HeaderComponent,
