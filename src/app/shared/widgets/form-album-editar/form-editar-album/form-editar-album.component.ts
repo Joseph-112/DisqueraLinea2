@@ -60,7 +60,7 @@ export class FormEditarAlbumComponent implements OnInit {
     let str = event.value?.toLocaleDateString();    
     let splitted = str?.split("/", 3); 
     let fecha = splitted![2]+"-"+splitted![1]+"-"+splitted![0];
-    this.album.fLanzamiento = (fecha);
+    this.album.fLanzamiento = (fecha).toString();
   }
 
   openSnackBar(message: string, action: string) {

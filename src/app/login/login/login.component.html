@@ -1,49 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Design by foolishdeveloper.com -->
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <!--Stylesheet-->
-    <style media="screen">
+<nav><ul>
+	<li><a  routerLinkActive="list-item-active" routerLink="/log">Inicio</a></li>
+	<li><a href="https://promocionmusical.es/industria-musical-que-es-historia-modelo-negocio/">Quiénes somos</a></li>
+	<li><a href="#">Servicios</a></li>
+	<li><a href="#">Blog</a></li>
+	<li><a href="#">Contacto</a></li>
+</ul></nav>
+
+<div class="container" id="container">
+<div class="form-container sign-up-container">
+		<h1>Create Account</h1>
+		<div class="social-container">
+			<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+			<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+			<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+		</div>
+		
+
+</div>
+<div class="form-container sign-in-container">
+	
+		<h1>Sign in</h1>
+		<div class="social-container">
+			<a href="#" class="social"><img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/facebook_black_logo_icon_147136.png" width="30px" > </a>
+			<a href="#" class="social"><img src="https://img.icons8.com/ios-glyphs/480/google-plus.png" width="40px" > </a>
+			<a href="#" class="social"><img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/linkedin_black_logo_icon_147114.png" width="30px" > </a>
+		</div>
+		<span>or use your account</span>
+		
+
+<input #email type="email" placeholder="Email" required />
+   
+<input  #password type="password" placeholder="Password" required />
+		<a href="#">Forgot your password?</a>
+	
+		
+		<button type="submit" (click)="openLogin(email.value, password.value)"> Inicio </button>
+		
+	
+</div>
+<div class="overlay-container">
+	<div class="overlay">
+<div class="slider" width="45px">
+		<ul>
+			<li>
+<img src="https://www.larevistaactual.com/wp-content/uploads/2017/11/PRINCIPAL-22.jpg" alt="">
+</li>
+			<li>
+<img src="http://2.bp.blogspot.com/-jpoxPioUz3M/U_cUKWwu46I/AAAAAAAAKsE/wGfCSwJV9Os/s1600/3135461794d0552dbf052d3_09369778.jpg" alt="">
+</li>
+			<li>
+<img src="http://lh5.ggpht.com/-OLxQmIrX5wY/UarrhxIEZ0I/AAAAAAAABE0/fPm0It9zlDE/s9000/portadas.png" alt="">
+</li>
+			<li>
+<img src="http://welltechnically.com/wp-content/uploads/2013/09/android-widescreen-wallpaper-14165-hd-wallpapers-700x300.jpg" alt="">
+</li>
+		</ul>
+	</div>
+
+		<div class="overlay-panel overlay-left">
   
-
-    </style>
-</head>
-<body>
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-    <form>
-        <h3>Login Here</h3>
-
-        <label for="username">Username</label>
-        <input #email type="email" placeholder="Email" required />
-
-        <label for="password">Password</label>
-		<input  #password type="password" placeholder="Password" required />
-
-      <button  type="submit" (click)="openLogin(email.value, password.value)"> Inicio </button>
-       
-    </form>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 			
+		</div>
+		
+	</div>
+</div>
+</div>     
+<!--<mat-divider></mat-divider>-->
+<footer>
+
+    <img src="https://thump-images.vice.com/images/2015/04/23/el-arte-de-los-logos-para-sellos-discograficos-body-image-1429828387.jpg" width="80px">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+ Todos los derechos reservados 2021
+ <i class="material-icons">copyright</i>
+    
+</footer>

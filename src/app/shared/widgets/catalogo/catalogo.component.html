@@ -1,18 +1,18 @@
-<button mat-button (click)="carritoDialog()">Carrito</button>
+<button mat-button (click)="carritoDialog()"><img src="https://cdn-icons-png.flaticon.com/128/2331/2331970.png" width="30px" height="30px">Carrito</button>
 <mat-divider></mat-divider>
 
 
-<mat-list>
-    <div mat-subheader>Canciones</div>
-  <mat-list-item *ngFor="let cancion of canciones">
+<mat-list class="compra" >
+    <div mat-subheader style="color: black;">Canciones</div>
+  <mat-list-item *ngFor="let cancion of canciones"style="color: black;">
     <mat-icon mat-list-icon>album</mat-icon>
     <div mat-line>{{cancion.nombreCancion}}</div>
     <div mat-line>Artista: {{cancion.nombreArtistico}}</div>
     <div mat-line>Género: {{cancion.genero}}</div> 
     <div mat-line>Fecha de lanzamiento: {{cancion.fLanzamiento | date:'yyyy-MM-dd '}} </div>
     <div mat-line>Precio: ${{cancion.precio}} </div>
-
-    <button mat-button (click)="comprar(cancion)">Comprar</button>
+    <mat-divider ></mat-divider>
+    <button mat-raised-button (click)="comprar(cancion)"><img src="https://cdn-icons-png.flaticon.com/128/595/595555.png" width="25px" height="25px">Comprar</button>
   </mat-list-item>
   <mat-divider></mat-divider>
 

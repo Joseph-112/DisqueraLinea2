@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
    
          }else if(this.rol.id  == 2) {
            //cliente
-           this.router.navigateByUrl('/');
+           this.router.navigateByUrl('/catalogo');
            }
       })
      

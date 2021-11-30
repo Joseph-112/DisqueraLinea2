@@ -13,9 +13,8 @@ import { ArtistaService } from 'src/app/_service/artista.service';
 
 })
 export class FormArtistaComponent implements OnInit {
-  startDate = new Date(2014, 0, 1);
-  minDate = new Date(1980, 0, 1);
-  maxDate = new Date(2016, 11, 31);
+
+  maxDate = new Date(2006, 11, 30);
 
   genero!: String;
   artista = new Artista();
@@ -44,7 +43,7 @@ export class FormArtistaComponent implements OnInit {
       this.artista.genero = this.genero;
       this.artista.imagen = "/jose.jpg";
       this.artista.nacionalidad = nacionalidad;
-      
+      console.log(this.artista);
      this.artistaService.guardar(this.artista).subscribe(data =>{
       console.log(this.artista);
       this.openSnackBar('Artista registrado satisfactoriamente','Info');
@@ -52,10 +51,12 @@ export class FormArtistaComponent implements OnInit {
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    let str = event.value?.toLocaleDateString();    
+    let str = event.value?.toLocaleDateString();
+
     let splitted = str?.split("/", 3); 
     let fecha = splitted![2]+"-"+splitted![1]+"-"+splitted![0];
-    this.artista.fNacimiento = (fecha);
+    this.artista.fNacimiento = (fecha).toString();
+    console.log(this.artista.fNacimiento);
   }
 
   changeRatio(event: MatSelectChange) {

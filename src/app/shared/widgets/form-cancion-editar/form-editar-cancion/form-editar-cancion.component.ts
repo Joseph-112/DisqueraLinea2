@@ -25,9 +25,9 @@ export class FormEditarCancionComponent implements OnInit {
   public nomAlbum = new AlbumDto();
   public cancion = new CancionDto();
   count! : boolean;
-  startDate = new Date(2021, 0, 1);
+  
   minDate = new Date(2000, 0, 1);
-  maxDate = new Date(2021, 11, 1);
+
   constructor(private artistaService : ArtistaService,
     private albumService : AlbumService,
     private cancionService : CancionService,
