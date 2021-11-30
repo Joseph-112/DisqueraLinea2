@@ -14,6 +14,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { LoginModule } from './login/login/login.module';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login/login.component';
 
 
 
@@ -22,7 +23,8 @@ const routes: Routes = [];
 @NgModule({
   declarations: [
     AppComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    LoginComponent
   ],
   imports: [
   
